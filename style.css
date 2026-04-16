@@ -83,6 +83,7 @@ body::before {
   height: 36px;
   width: auto;
   display: block;
+  mix-blend-mode: lighten;
 }
 
 .nav-links {
@@ -133,7 +134,7 @@ body::before {
   width: auto;
   display: block;
   margin-bottom: 12px;
-  opacity: 0.88;
+  mix-blend-mode: lighten;
 }
 .footer-brand-block .fb-presents {
   font-family: var(--font-display);
