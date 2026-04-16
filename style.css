@@ -74,16 +74,49 @@ body::before {
 }
 
 .nav-logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  gap: 9px;
   text-decoration: none;
   flex-shrink: 0;
 }
-.nav-logo img {
-  height: 36px;
-  width: auto;
-  display: block;
-  mix-blend-mode: lighten;
+.nav-hex {
+  width: 28px;
+  height: 32px;
+  background: var(--maroon);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.nav-hex span {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 0.7rem;
+  color: var(--bone);
+  letter-spacing: -0.02em;
+}
+.nav-wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  line-height: 1;
+}
+.nav-wordmark .nw-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: var(--bone);
+  text-transform: uppercase;
+}
+.nav-wordmark .nw-sub {
+  font-family: var(--font-display);
+  font-size: 0.42rem;
+  letter-spacing: 0.3em;
+  color: var(--iron);
+  text-transform: uppercase;
 }
 
 .nav-links {

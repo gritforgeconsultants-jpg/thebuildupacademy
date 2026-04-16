@@ -21,6 +21,53 @@
 <link rel="stylesheet" href="style.css">
 <style>
 
+/* ── BRAND LOCKUP ── */
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 20px;
+  opacity: 0.68;
+}
+.gf-hex {
+  width: 42px;
+  height: 48px;
+  background: var(--maroon);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.gf-hex span {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: var(--bone);
+  letter-spacing: -0.02em;
+}
+.gf-wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1;
+}
+.gf-wordmark .gw-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.65rem;
+  letter-spacing: 0.1em;
+  color: var(--bone);
+  text-transform: uppercase;
+}
+.gf-wordmark .gw-sub {
+  font-family: var(--font-display);
+  font-size: 0.52rem;
+  letter-spacing: 0.38em;
+  color: var(--iron);
+  text-transform: uppercase;
+}
+
 /* ── URGENCY BAR ── */
 .urgency {
   background: var(--maroon);
@@ -267,7 +314,11 @@
 <!-- NAV -->
 <nav class="site-nav">
   <a href="index.html" class="nav-logo">
-    <img src="GF_Logo_v3.png" height="36" alt="GritForge — The Build-Up Academy">
+    <div class="nav-hex"><span>GF</span></div>
+    <div class="nav-wordmark">
+      <span class="nw-name">GritForge</span>
+      <span class="nw-sub">Forged with Grit</span>
+    </div>
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -285,7 +336,13 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <img src="GF_Logo_v3.png" alt="GritForge" style="width:min(360px,100%);height:auto;display:block;margin-bottom:16px;mix-blend-mode:lighten;" class="fade d1">
+    <div class="brand-lockup fade d1">
+      <div class="gf-hex"><span>GF</span></div>
+      <div class="gf-wordmark">
+        <span class="gw-name">GritForge</span>
+        <span class="gw-sub">Forged with Grit</span>
+      </div>
+    </div>
     <div class="eyebrow fade d2">GritForge Presents</div>
     <h1 class="hero-title fade d3">The<span class="a">Build-Up</span></h1>
     <p class="hero-sub fade d4">A hands-on preconstruction workshop for <strong>GCs and trade subs</strong> who are tired of losing bids they should have won — or winning bids they shouldn't have taken.</p>
@@ -587,7 +644,13 @@
 <footer class="site-footer">
   <div class="footer-grid">
     <div class="footer-brand-block">
-      <img src="GF_Logo_v3.png" alt="GritForge" class="fb-logo">
+      <div class="brand-lockup" style="opacity:0.55;margin-bottom:14px;">
+        <div class="gf-hex"><span>GF</span></div>
+        <div class="gf-wordmark">
+          <span class="gw-name">GritForge</span>
+          <span class="gw-sub">Forged with Grit</span>
+        </div>
+      </div>
       <div class="fb-presents">Presents</div>
       <div class="fb-name">The Build-Up<br>Academy</div>
       <p>Field-tested preconstruction training for GCs and trade subs who bid competitively.</p>

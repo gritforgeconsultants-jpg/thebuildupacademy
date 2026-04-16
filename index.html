@@ -40,12 +40,50 @@
   z-index: 2;
 }
 
-.hero-logo {
-  width: min(380px, 100%);
-  height: auto;
-  display: block;
-  margin-bottom: 16px;
-  mix-blend-mode: lighten;
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 24px;
+  opacity: 0.68;
+}
+.gf-hex {
+  width: 44px;
+  height: 50px;
+  background: var(--maroon);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.gf-hex span {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.15rem;
+  color: var(--bone);
+  letter-spacing: -0.02em;
+}
+.gf-wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1;
+}
+.gf-wordmark .gw-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.75rem;
+  letter-spacing: 0.1em;
+  color: var(--bone);
+  text-transform: uppercase;
+}
+.gf-wordmark .gw-sub {
+  font-family: var(--font-display);
+  font-size: 0.52rem;
+  letter-spacing: 0.38em;
+  color: var(--iron);
+  text-transform: uppercase;
 }
 
 .gf-presents {
@@ -494,7 +532,11 @@
 <!-- NAV -->
 <nav class="site-nav">
   <a href="index.html" class="nav-logo">
-    <img src="GF_Logo_v3.png" height="36" alt="GritForge — The Build-Up Academy">
+    <div class="nav-hex"><span>GF</span></div>
+    <div class="nav-wordmark">
+      <span class="nw-name">GritForge</span>
+      <span class="nw-sub">Forged with Grit</span>
+    </div>
   </a>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Home</a></li>
@@ -506,7 +548,13 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <img src="GF_Logo_v3.png" alt="GritForge" class="hero-logo fade d1">
+    <div class="brand-lockup fade d1">
+      <div class="gf-hex"><span>GF</span></div>
+      <div class="gf-wordmark">
+        <span class="gw-name">GritForge</span>
+        <span class="gw-sub">Forged with Grit</span>
+      </div>
+    </div>
     <div class="gf-presents fade d2">Presents</div>
     <h1 class="hero-title">
       <span class="the fade d3">The</span>
@@ -717,7 +765,13 @@
 <footer class="site-footer">
   <div class="footer-grid">
     <div class="footer-brand-block">
-      <img src="GF_Logo_v3.png" alt="GritForge" class="fb-logo">
+      <div class="brand-lockup" style="opacity:0.55;margin-bottom:14px;">
+        <div class="gf-hex"><span>GF</span></div>
+        <div class="gf-wordmark">
+          <span class="gw-name">GritForge</span>
+          <span class="gw-sub">Forged with Grit</span>
+        </div>
+      </div>
       <div class="fb-presents">Presents</div>
       <div class="fb-name">The Build-Up<br>Academy</div>
       <p>Field-tested preconstruction training for GCs and trade subs who bid competitively.</p>
