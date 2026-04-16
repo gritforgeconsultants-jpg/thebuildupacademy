@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Build-Up Workshop — GritForge Presents | Reserve Your Seat</title>
+<meta name="description" content="A 6-hour live preconstruction workshop for GCs and trade subs. 10 seats. $500. Cohort 1 forming now.">
+<link rel="stylesheet" href="style.css">
+<style>
+
+/* ── URGENCY BAR ── */
+.urgency {
+  background: var(--maroon);
+  padding: 10px var(--pad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-size: 0.83rem;
+  color: var(--cream);
+}
+.u-dot { width: 7px; height: 7px; background: var(--amber-light); border-radius: 50%; animation: pulse 1.8s infinite; flex-shrink: 0; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+.urgency strong { color: var(--amber-light); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 88vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.hero-left {
+  padding: 72px var(--pad) 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  text-transform: uppercase;
+  line-height: 0.9;
+  color: var(--cream);
+  margin-bottom: 22px;
+}
+.hero-title .a { color: var(--amber); display: block; }
+.hero-sub {
+  font-size: 1.02rem;
+  color: var(--fog);
+  line-height: 1.76;
+  margin-bottom: 32px;
+  max-width: 460px;
+  font-weight: 300;
+}
+.hero-sub strong { color: var(--bone); }
+.hero-stats { display: flex; border: 1px solid var(--steel-light); margin-bottom: 32px; }
+.stat { padding: 14px 20px; border-right: 1px solid var(--steel-light); flex: 1; }
+.stat:last-child { border-right: none; }
+.stat-n { font-family: var(--font-display); font-weight: 900; font-size: 1.7rem; color: var(--amber); line-height: 1; display: block; }
+.stat-l { font-size: 0.63rem; letter-spacing: 0.14em; color: var(--fog); text-transform: uppercase; margin-top: 2px; display: block; }
+.hero-actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.seats-note { font-size: 0.76rem; color: var(--fog); }
+.seats-note strong { color: var(--amber); }
+
+.hero-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--steel-mid);
+  border-left: 1px solid var(--steel-light);
+  position: relative;
+}
+.hero-right::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(100,15,15,0.15) 0%, transparent 60%);
+}
+
+/* ── PRICE CARD ── */
+.price-card {
+  background: var(--steel);
+  border: 1px solid var(--steel-light);
+  padding: 40px 32px;
+  width: 358px;
+  position: relative;
+  z-index: 2;
+}
+.price-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--maroon), var(--amber));
+}
+.price-tag { font-family: var(--font-display); font-weight: 900; font-size: 3.5rem; color: var(--cream); line-height: 1; }
+.price-tag sup { font-size: 1.3rem; color: var(--amber); vertical-align: super; }
+.price-per { font-size: 0.68rem; color: var(--fog); letter-spacing: 0.1em; text-transform: uppercase; margin: 2px 0 6px; }
+.price-hook { font-size: 0.8rem; color: var(--amber-light); font-style: italic; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--steel-light); }
+.date-block { background: var(--maroon-dark); padding: 12px 14px; margin-bottom: 16px; border: 1px solid rgba(100,15,15,0.55); }
+.date-label { font-size: 0.58rem; letter-spacing: 0.22em; color: var(--maroon-light); text-transform: uppercase; margin-bottom: 2px; }
+.date-value { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: var(--amber-light); }
+.date-sub { font-size: 0.68rem; color: var(--fog); margin-top: 2px; }
+.meter { margin-bottom: 16px; }
+.meter-lbl { display: flex; justify-content: space-between; font-size: 0.63rem; letter-spacing: 0.1em; color: var(--fog); text-transform: uppercase; margin-bottom: 6px; }
+.meter-lbl strong { color: var(--amber); }
+.meter-bar { height: 4px; background: var(--steel-light); position: relative; }
+.meter-fill { position: absolute; left: 0; top: 0; height: 100%; width: 0; background: linear-gradient(90deg, var(--maroon), var(--amber)); transition: width 1.2s ease 0.5s; }
+.includes { list-style: none; margin-bottom: 20px; }
+.includes li { padding: 7px 0; border-bottom: 1px solid var(--steel-light); font-size: 0.83rem; color: var(--bone); display: flex; align-items: flex-start; gap: 8px; }
+.includes li::before { content: '→'; color: var(--amber); font-size: 0.74rem; flex-shrink: 0; margin-top: 2px; }
+.badge { font-size: 0.6rem; background: var(--maroon); color: var(--amber-light); padding: 2px 5px; margin-left: auto; flex-shrink: 0; }
+
+/* ── SECTIONS ── */
+.section { padding: 72px var(--pad); max-width: var(--max-w); margin: 0 auto; }
+.section-full { padding: 72px var(--pad); }
+.section-full-inner { max-width: var(--max-w); margin: 0 auto; }
+
+/* TRANSFORMATION */
+.t-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--steel-light); margin-top: 40px; }
+.t-item { background: var(--steel); padding: 28px 28px; position: relative; }
+.t-num { font-family: var(--font-display); font-weight: 900; font-size: 2.2rem; color: rgba(100,15,15,0.25); position: absolute; top: 10px; right: 14px; line-height: 1; }
+.t-title { font-family: var(--font-display); font-weight: 700; font-size: 0.96rem; text-transform: uppercase; color: var(--amber); margin-bottom: 7px; }
+.t-desc { font-size: 0.85rem; color: var(--fog); line-height: 1.65; }
+
+/* DIFFERENT */
+.d-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 38px; }
+.d-item { display: flex; gap: 14px; align-items: flex-start; }
+.d-arrow { font-family: var(--font-display); font-weight: 900; font-size: 1.2rem; color: var(--amber); flex-shrink: 0; width: 26px; line-height: 1.2; }
+.d-text strong { display: block; font-size: 0.92rem; color: var(--cream); margin-bottom: 3px; }
+.d-text span { font-size: 0.82rem; color: var(--fog); line-height: 1.6; }
+
+/* CURRICULUM */
+.mod-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--steel-light); border: 1px solid var(--steel-light); margin-top: 40px; }
+.mod { background: var(--steel-mid); padding: 28px 32px; position: relative; transition: background 0.2s; }
+.mod:hover { background: var(--steel-light); }
+.mod-n { font-family: var(--font-display); font-weight: 900; font-size: 2.8rem; color: rgba(100,15,15,0.2); position: absolute; top: 10px; right: 16px; line-height: 1; }
+.mod-time { font-size: 0.6rem; letter-spacing: 0.2em; color: var(--maroon-light); text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 7px; }
+.mod-time::before { content: ''; width: 12px; height: 1px; background: var(--maroon-light); }
+.mod-title { font-family: var(--font-display); font-weight: 700; font-size: 1.06rem; text-transform: uppercase; color: var(--cream); margin-bottom: 10px; max-width: calc(100% - 48px); }
+.mod ul { list-style: none; }
+.mod ul li { font-size: 0.8rem; color: var(--fog); padding: 4px 0 4px 12px; border-bottom: 1px solid rgba(46,56,71,0.5); position: relative; }
+.mod ul li::before { content: '·'; position: absolute; left: 0; color: var(--amber); font-size: 1rem; line-height: 1.2; }
+
+/* WHO */
+.who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 40px; }
+.who-col h3 { font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--steel-light); }
+.who-fits h3 { color: var(--amber); }
+.who-not h3 { color: var(--iron); }
+.fit-list { list-style: none; }
+.fit-list li { display: flex; gap: 9px; padding: 9px 0; border-bottom: 1px solid rgba(46,56,71,0.4); font-size: 0.84rem; line-height: 1.55; }
+.fit-list .ic { flex-shrink: 0; margin-top: 2px; font-size: 0.75rem; }
+.who-fits .ic { color: var(--amber); }
+.who-not .ic { color: var(--iron); }
+
+/* CRED */
+.cred-block { background: var(--steel-mid); border-top: 1px solid var(--steel-light); border-bottom: 1px solid var(--steel-light); }
+.cred-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; padding: 72px var(--pad); max-width: var(--max-w); margin: 0 auto; }
+.cred-nums { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--steel-light); }
+.cred-n { background: var(--steel); padding: 20px 24px; }
+.cred-n-v { font-family: var(--font-display); font-weight: 900; font-size: 1.9rem; color: var(--amber); line-height: 1; margin-bottom: 3px; }
+.cred-n-l { font-size: 0.68rem; color: var(--fog); letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.4; }
+.cred-info .name { font-family: var(--font-display); font-weight: 900; font-size: 1.7rem; text-transform: uppercase; color: var(--cream); margin-bottom: 2px; }
+.cred-info .role { font-size: 0.68rem; letter-spacing: 0.16em; color: var(--amber); text-transform: uppercase; margin-bottom: 16px; }
+.cred-info .bio { font-size: 0.88rem; color: var(--fog); line-height: 1.76; margin-bottom: 16px; }
+.cred-info .bio strong { color: var(--bone); }
+.tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.tag { font-size: 0.65rem; color: var(--fog); display: flex; align-items: center; gap: 5px; }
+.tag::before { content: '■'; color: var(--maroon-light); font-size: 0.42rem; }
+
+/* GUARANTEE */
+.guarantee { padding: 52px var(--pad); display: flex; align-items: flex-start; gap: 32px; background: var(--maroon-dark); border-top: 1px solid rgba(100,15,15,0.4); border-bottom: 1px solid rgba(100,15,15,0.4); }
+.g-icon { font-family: var(--font-display); font-weight: 900; font-size: 3rem; color: var(--amber); line-height: 1; flex-shrink: 0; }
+.g-title { font-family: var(--font-display); font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--cream); margin-bottom: 8px; }
+.g-text { font-size: 0.86rem; color: var(--fog); line-height: 1.7; max-width: 560px; }
+.g-text strong { color: var(--amber-light); }
+
+/* AFTER PAY */
+.after-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--steel-light); margin-top: 36px; }
+.after-step { background: var(--steel-mid); padding: 24px 20px; }
+.after-n { font-family: var(--font-display); font-weight: 900; font-size: 1.6rem; color: var(--maroon-light); line-height: 1; margin-bottom: 8px; }
+.after-title { font-family: var(--font-display); font-weight: 700; font-size: 0.86rem; text-transform: uppercase; color: var(--amber); margin-bottom: 4px; }
+.after-desc { font-size: 0.79rem; color: var(--fog); line-height: 1.6; }
+
+/* FAQ */
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--steel-light); margin-top: 38px; border: 1px solid var(--steel-light); }
+.faq-item { background: var(--steel-mid); padding: 26px 30px; transition: background 0.2s; }
+.faq-item:hover { background: var(--steel-light); }
+.faq-q { font-family: var(--font-display); font-weight: 700; font-size: 0.98rem; text-transform: uppercase; color: var(--amber); margin-bottom: 11px; letter-spacing: 0.04em; line-height: 1.25; }
+.faq-a { font-size: 0.85rem; color: var(--fog); line-height: 1.72; }
+
+/* REGISTER */
+.reg { padding: 96px var(--pad); text-align: center; position: relative; overflow: hidden; }
+.reg::before { content: 'REGISTER'; position: absolute; font-family: var(--font-display); font-weight: 900; font-size: 18vw; color: rgba(30,36,44,0.65); top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; white-space: nowrap; letter-spacing: 0.1em; }
+.reg-title { font-family: var(--font-display); font-weight: 900; font-size: clamp(2rem, 4vw, 3.2rem); text-transform: uppercase; color: var(--cream); position: relative; z-index: 2; margin-bottom: 10px; }
+.reg-title .a { color: var(--amber); }
+.reg-sub { font-size: 0.92rem; color: var(--fog); position: relative; z-index: 2; margin-bottom: 32px; }
+.form { max-width: 452px; margin: 0 auto; position: relative; z-index: 2; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-bottom: 9px; }
+.field { display: flex; flex-direction: column; text-align: left; }
+.field.full { grid-column: 1/-1; }
+.field label { font-size: 0.61rem; letter-spacing: 0.2em; color: var(--fog); text-transform: uppercase; margin-bottom: 5px; }
+.field input, .field select {
+  background: var(--steel-mid);
+  border: 1px solid var(--steel-light);
+  color: var(--cream);
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 0.87rem;
+  outline: none;
+  transition: border-color 0.2s;
+  appearance: none;
+}
+.field input:focus, .field select:focus { border-color: var(--maroon-light); }
+.field input::placeholder { color: var(--iron); }
+.field select option { background: var(--steel-mid); }
+.sub-btn {
+  width: 100%;
+  background: var(--maroon);
+  color: var(--cream);
+  border: 1px solid var(--maroon-light);
+  padding: 16px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 13px;
+  transition: all 0.2s;
+}
+.sub-btn:hover { background: var(--maroon-light); color: var(--amber-light); }
+.form-note { font-size: 0.7rem; color: var(--iron); margin-top: 12px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 52px 20px; }
+  .hero-right { display: none; }
+  .section { padding: 52px 20px; }
+  .section-full { padding: 52px 20px; }
+  .t-grid, .d-grid, .after-grid, .faq-grid, .who-grid { grid-template-columns: 1fr; }
+  .mod-grid { grid-template-columns: 1fr; }
+  .cred-inner { grid-template-columns: 1fr; padding: 52px 20px; gap: 36px; }
+  .guarantee { padding: 40px 20px; flex-direction: column; }
+  .reg { padding: 60px 20px; }
+  .row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">
+    <span class="presents">GritForge Presents</span>
+    <span class="name">The Build-Up Academy</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="workshop.html" class="active">The Workshop</a></li>
+    <li><a href="instructor.html">Instructor</a></li>
+    <li><a href="#register" class="nav-cta">Claim Your Seat — $500</a></li>
+  </ul>
+</nav>
+
+<!-- URGENCY -->
+<div class="urgency">
+  <span class="u-dot"></span>
+  <span>Cohort 1 forming now — <strong>session confirmed when 10 seats fill.</strong> Targeting May 17.</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="eyebrow fade d1">GritForge Presents</div>
+    <h1 class="hero-title fade d2">The<span class="a">Build-Up</span></h1>
+    <p class="hero-sub fade d3">A hands-on preconstruction workshop for <strong>GCs and trade subs</strong> who are tired of losing bids they should have won — or winning bids they shouldn't have taken.</p>
+    <div class="hero-stats fade d3">
+      <div class="stat"><span class="stat-n">10</span><span class="stat-l">Seats Max</span></div>
+      <div class="stat"><span class="stat-n">6hr</span><span class="stat-l">Live Session</span></div>
+      <div class="stat"><span class="stat-n">15+</span><span class="stat-l">Yrs Field Exp.</span></div>
+      <div class="stat"><span class="stat-n">$4.3M+</span><span class="stat-l">Active Pipeline</span></div>
+    </div>
+    <div class="hero-actions fade d4">
+      <a href="#register" class="btn btn-primary">Reserve Your Seat — $500</a>
+      <span class="seats-note"><strong>3 of 10 seats</strong> claimed</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="price-card fade d3">
+      <div class="price-tag"><sup>$</sup>500</div>
+      <div class="price-per">Per seat · One-time · No upsells</div>
+      <p class="price-hook">One missed scope item costs more than this. One improved win pays for it 20× over.</p>
+      <div class="date-block">
+        <div class="date-label">Next Session</div>
+        <div class="date-value">Targeting May 17, 2025</div>
+        <div class="date-sub">Confirmed when cohort fills — you'll be notified immediately</div>
+      </div>
+      <div class="meter">
+        <div class="meter-lbl"><span>Seats Remaining</span><span><strong>7 of 10</strong> open</span></div>
+        <div class="meter-bar"><div class="meter-fill" id="mf"></div></div>
+      </div>
+      <ul class="includes">
+        <li>6-hour live virtual session via Zoom</li>
+        <li>Workbook with 12+ templates and checklists</li>
+        <li>Recording access — 30 days post-session</li>
+        <li>Private Q&A during each module</li>
+        <li>GritForge Bid Prep Reference Guide (PDF)</li>
+        <li>Scope sheets covering 6 trade divisions</li>
+        <li><span>30-min follow-up call with instructor</span><span class="badge">First 5 seats</span></li>
+      </ul>
+      <a href="#register" class="btn btn-amber" style="width:100%;text-align:center;display:block;">Claim Your Seat</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMATION -->
+<div class="divider" style="padding:0 var(--pad);max-width:var(--max-w);margin:52px auto 0;">
+  <div class="line"></div><div class="lbl">After This Workshop</div><div class="line"></div>
+</div>
+<section class="section-full" style="background:var(--steel-mid);border-top:1px solid var(--steel-light);border-bottom:1px solid var(--steel-light);">
+  <div class="section-full-inner">
+    <div class="eyebrow">What Changes</div>
+    <h2 class="section-title">Not what you'll learn.<br><span class="a">What you'll do differently Monday morning.</span></h2>
+    <div class="t-grid">
+      <div class="t-item reveal"><div class="t-num">01</div><div class="t-title">Triage 2–3× Faster</div><div class="t-desc">Know within 20 minutes whether a bid package is worth your next 20 hours — deliberately, not by default.</div></div>
+      <div class="t-item reveal"><div class="t-num">02</div><div class="t-title">Eliminate the Margin Leak</div><div class="t-desc">All five cost components accounted for every time. No more missing burden rate or pricing markup when you mean margin.</div></div>
+      <div class="t-item reveal"><div class="t-num">03</div><div class="t-title">Stop Scope Disputes Before They Start</div><div class="t-desc">Exclusions that hold up in the field. Fewer places for change order fights to start.</div></div>
+      <div class="t-item reveal"><div class="t-num">04</div><div class="t-title">Price With Confidence, Not Guesswork</div><div class="t-desc">Scope gap matrix as a habit. Sub quotes read before they're carried into your number.</div></div>
+      <div class="t-item reveal"><div class="t-num">05</div><div class="t-title">Understand How Competitors Think</div><div class="t-desc">Know what GCs look for when they open your proposal — and what makes them call someone else first.</div></div>
+      <div class="t-item reveal"><div class="t-num">06</div><div class="t-title">Build a System, Not Tribal Knowledge</div><div class="t-desc">Documented logic — checklists, scope language, templates — your shop can run on without it living only in your head.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENT -->
+<div class="divider" style="padding:0 var(--pad);max-width:var(--max-w);margin:0 auto;">
+  <div class="line"></div><div class="lbl">Why This Is Different</div><div class="line"></div>
+</div>
+<section class="section-full">
+  <div class="section-full-inner">
+    <div class="eyebrow">The Anti-Course</div>
+    <h2 class="section-title">Built by someone who<br><span class="a">bids work this week.</span></h2>
+    <div class="d-grid">
+      <div class="d-item reveal"><div class="d-arrow">→</div><div class="d-text"><strong>Zero theory. 100% field logic.</strong><span>Every framework came from real bids — a $2.6M federal submission and $700K+ in awarded trade work. Nothing borrowed from a textbook.</span></div></div>
+      <div class="d-item reveal"><div class="d-arrow">→</div><div class="d-text"><strong>Not a webinar. A working session.</strong><span>You complete exercises on real bids each module. Module 6 is a live peer review of work in this room. Participation expected.</span></div></div>
+      <div class="d-item reveal"><div class="d-arrow">→</div><div class="d-text"><strong>10 seats. No exceptions.</strong><span>Small enough that the instructor knows your name and your trade before the session starts. Not a 200-person event where you disappear.</span></div></div>
+      <div class="d-item reveal"><div class="d-arrow">→</div><div class="d-text"><strong>Templates you use Monday.</strong><span>Scope checklists, sub quote review, proposal audit — the same tools used on active bids. Take them and adapt them.</span></div></div>
+      <div class="d-item reveal"><div class="d-arrow">→</div><div class="d-text"><strong>Designed for small shops.</strong><span>If you are the estimator, the PM, and sometimes the guy in the field — this was built for you, not for shops with dedicated preconstruction departments.</span></div></div>
+      <div class="d-item reveal"><div class="d-arrow">→</div><div class="d-text"><strong>Direct feedback on your actual work.</strong><span>Module 6 is a live hot seat. Real bid, real critique. That level of direct engagement is rare and expensive to get elsewhere.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<div class="divider" style="padding:0 var(--pad);max-width:var(--max-w);margin:0 auto;">
+  <div class="line"></div><div class="lbl">Workshop Curriculum</div><div class="line"></div>
+</div>
+<section class="section-full" style="padding-top:72px;padding-bottom:56px;">
+  <div class="section-full-inner">
+    <div class="eyebrow">What You'll Work Through</div>
+    <h2 class="section-title">Six hours.<span class="a"> No filler.</span></h2>
+    <div class="mod-grid">
+      <div class="mod reveal"><div class="mod-n">01</div><div class="mod-time">60 min · Morning</div><div class="mod-title">Reading the Job Before You Price It</div><ul><li>Bid package triage in under 20 minutes</li><li>Document hierarchy — what governs scope disputes</li><li>Identifying gaps before they become change orders</li><li>Go/no-go decision framework and scorecard</li></ul></div>
+      <div class="mod reveal"><div class="mod-n">02</div><div class="mod-time">60 min · Morning</div><div class="mod-title">Building a Number That Wins and Pays</div><ul><li>Five-component build-up: labor, material, equipment, subs, burden</li><li>Pricing risk — not just cost</li><li>Markup vs. margin: the math most subs get wrong</li><li>Live walkthrough of a structural steel bid</li></ul></div>
+      <div class="mod reveal"><div class="mod-n">03</div><div class="mod-time">60 min · Midday</div><div class="mod-title">Scope Inclusion / Exclusion That Protects You</div><ul><li>Three types of scope language — when to use each</li><li>Exclusions that hold up in the field</li><li>How GCs actually read your proposal</li><li>Write yours, critique a peer's — live exercise</li></ul></div>
+      <div class="mod reveal"><div class="mod-n">04</div><div class="mod-time">60 min · Midday</div><div class="mod-title">Vendor Quotes and Subcontractor Risk</div><ul><li>14-point sub quote review before it enters your number</li><li>Scope gap matrix across competing quotes</li><li>When to carry contingency and how to size it</li><li>Negotiation timing before bid day</li></ul></div>
+      <div class="mod reveal"><div class="mod-n">05</div><div class="mod-time">60 min · Afternoon</div><div class="mod-title">The Proposal That Gets You to the Table</div><ul><li>Nine-section anatomy of a complete proposal</li><li>What GCs see when they open your document</li><li>What kills a proposal — even with a competitive number</li><li>Self-audit: score your last submission</li></ul></div>
+      <div class="mod reveal"><div class="mod-n">06</div><div class="mod-time">60 min · Afternoon</div><div class="mod-title">Bring Your Own Bid — Hot Seat</div><ul><li>2–3 participant bids reviewed live</li><li>Direct feedback on scope, pricing, and proposal quality</li><li>Common errors across the room — patterns and fixes</li><li>Action plan: three concrete changes for your next bid</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<div class="divider" style="padding:0 var(--pad);max-width:var(--max-w);margin:0 auto;">
+  <div class="line"></div><div class="lbl">Is This For You?</div><div class="line"></div>
+</div>
+<section class="section-full">
+  <div class="section-full-inner">
+    <div class="who-grid">
+      <div class="who-col who-fits reveal">
+        <h3>✓ This Seat Is Yours If</h3>
+        <ul class="fit-list">
+          <li><span class="ic">→</span>You're a GC or trade sub doing $500K–$10M annually and bidding competitively</li>
+          <li><span class="ic">→</span>You've won a job that hurt you financially and you're not sure where the margin went</li>
+          <li><span class="ic">→</span>You're estimating from tribal knowledge with no documented system — and you know it</li>
+          <li><span class="ic">→</span>You're a PM or foreman moving into estimating and need the fundamentals fast</li>
+          <li><span class="ic">→</span>You want to understand how the people pricing against you actually think</li>
+          <li><span class="ic">→</span>You want a repeatable system instead of starting from scratch on every bid</li>
+        </ul>
+      </div>
+      <div class="who-col who-not reveal">
+        <h3>— Skip This If</h3>
+        <ul class="fit-list">
+          <li><span class="ic">×</span>You want software training or a product demo — this is field logic, not a tool tutorial</li>
+          <li><span class="ic">×</span>You have never read a set of drawings — there is prerequisite baseline here</li>
+          <li><span class="ic">×</span>You want a passive webinar — this is hands-on and Module 6 requires real work</li>
+          <li><span class="ic">×</span>You are looking for a motivational experience — this is operational, not inspirational</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CRED -->
+<div class="divider" style="padding:0 var(--pad);max-width:var(--max-w);margin:0 auto;">
+  <div class="line"></div><div class="lbl">Your Instructor</div><div class="line"></div>
+</div>
+<section class="cred-block">
+  <div class="cred-inner reveal">
+    <div class="cred-nums">
+      <div class="cred-n"><div class="cred-n-v">$700K+</div><div class="cred-n-l">Awarded jobs — letters in hand</div></div>
+      <div class="cred-n"><div class="cred-n-v">$2.6M</div><div class="cred-n-l">Federal bid in active award negotiations</div></div>
+      <div class="cred-n"><div class="cred-n-v">15+</div><div class="cred-n-l">Years in the field</div></div>
+      <div class="cred-n"><div class="cred-n-v">CO+TX</div><div class="cred-n-l">Active markets — bidding this week</div></div>
+    </div>
+    <div class="cred-info">
+      <div class="name">Arron Fain</div>
+      <div class="role">Founder, GritForge Consultants · Estimator, Clark Iron Erectors</div>
+      <p class="bio">Arron has spent <strong>15+ years in preconstruction</strong> across structural steel, wood framing, ground-up commercial, and federal work. He bids weekly. <strong>These systems have been used on $4.3M+ of active pipeline. Not theory.</strong></p>
+      <div class="tags" style="margin-bottom:20px;">
+        <span class="tag">Structural Steel</span><span class="tag">Wood Framing</span><span class="tag">Federal Work</span><span class="tag">Commercial GC</span><span class="tag">Colorado & Texas</span>
+      </div>
+      <a href="instructor.html" class="btn btn-ghost">Full Instructor Profile →</a>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee">
+  <div class="g-icon">⊕</div>
+  <div>
+    <div class="g-title">The Straight-Talk Guarantee</div>
+    <p class="g-text">If you complete the full workshop and cannot identify <strong>three concrete changes</strong> you will make to how you bid — a template, a process, a pricing decision — ask for your money back. No hoops. This only works if the content delivers, and that is the standard I hold myself to.</p>
+  </div>
+</section>
+
+<!-- WHAT HAPPENS NEXT -->
+<div class="divider" style="padding:0 var(--pad);max-width:var(--max-w);margin:0 auto;">
+  <div class="line"></div><div class="lbl">What Happens Next</div><div class="line"></div>
+</div>
+<section class="section-full">
+  <div class="section-full-inner">
+    <div class="eyebrow">No Surprises</div>
+    <h2 class="section-title">What to expect<br><span class="a">after you register.</span></h2>
+    <div class="after-grid">
+      <div class="after-step reveal"><div class="after-n">01</div><div class="after-title">Confirmation</div><div class="after-desc">Your seat is confirmed immediately after payment. Confirmation email within minutes.</div></div>
+      <div class="after-step reveal"><div class="after-n">02</div><div class="after-title">Session Date</div><div class="after-desc">Once the cohort fills, date confirmed and Zoom link sent — typically 48–72 hours in advance.</div></div>
+      <div class="after-step reveal"><div class="after-n">03</div><div class="after-title">Day of Session</div><div class="after-desc">Workbook PDF sent via Zoom chat at open. No printing needed. Bring a current bid for Module 6.</div></div>
+      <div class="after-step reveal"><div class="after-n">04</div><div class="after-title">Recording + Templates</div><div class="after-desc">Within 24 hours: private recording link (30-day access), all templates, reference guide.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<div class="divider" style="padding:0 var(--pad);max-width:var(--max-w);margin:0 auto;">
+  <div class="line"></div><div class="lbl">Common Questions</div><div class="line"></div>
+</div>
+<section class="section-full">
+  <div class="section-full-inner">
+    <div class="eyebrow">Before You Register</div>
+    <h2 class="section-title">Straight answers.<span class="a"> No runaround.</span></h2>
+    <div class="faq-grid">
+      <div class="faq-item reveal"><div class="faq-q">Will this help if I'm a trade sub, not a GC?</div><div class="faq-a">Yes — and most seat holders in a typical cohort are subs. The curriculum is trade-agnostic. Scope language, exclusion templates, and sub quote review apply directly to steel, framing, mechanical, electrical, and specialty work.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Do I need estimating experience to attend?</div><div class="faq-a">Basic construction experience required — you should know what drawings look like and have submitted at least one bid. Not intro-level. Target participant: foreman or PM moving into estimating. Never been on a job site? This is not the right starting point.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">What if I can't attend the live session?</div><div class="faq-a">The live session is where most of the value is — Module 6 particularly cannot be replicated in a recording. If you cannot commit to the date, hold your seat for the next cohort. The recording is a supplement, not a substitute.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Is the session recorded?</div><div class="faq-a">Yes. Private recording link within 24 hours of session end, with 30-day access. For review and reference — not a replacement for attending live.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Is this software training?</div><div class="faq-a">No software, no platforms, no demos. Pure estimating logic. The templates in your workbook adapt to whatever software or process your shop already uses.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">What if the session date doesn't work once confirmed?</div><div class="faq-a">Email arron@gritforge.co before the date is announced and your seat transfers to the next cohort automatically. Once confirmed and within 7 days, seats are non-refundable — but the content guarantee stands regardless.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="reg" id="register">
+  <h2 class="reg-title">Secure Your <span class="a">Seat</span></h2>
+  <p class="reg-sub">10 seats maximum. Session confirmed when cohort fills — typically within 7–10 days.</p>
+  <div class="form">
+    <div class="row">
+      <div class="field"><label>First Name</label><input type="text" placeholder="John"></div>
+      <div class="field"><label>Last Name</label><input type="text" placeholder="Smith"></div>
+    </div>
+    <div class="row">
+      <div class="field full"><label>Company Name</label><input type="text" placeholder="ABC Contractors LLC"></div>
+    </div>
+    <div class="row">
+      <div class="field full"><label>Email Address</label><input type="email" placeholder="you@yourcompany.com"></div>
+    </div>
+    <div class="row">
+      <div class="field full">
+        <label>Your Role</label>
+        <select>
+          <option value="" disabled selected>Select your role</option>
+          <option>General Contractor / Owner</option>
+          <option>Trade Sub / Owner</option>
+          <option>Estimator</option>
+          <option>Project Manager moving into estimating</option>
+          <option>Foreman / Field Sup moving into estimating</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+    <button class="sub-btn" onclick="handleReg()">Reserve Seat & Proceed to Payment →</button>
+    <p class="form-note">Payment via Stripe · Your seat is confirmed immediately after payment · Refund policy: see guarantee above</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand-block">
+      <div class="fb-presents">GritForge Presents</div>
+      <div class="fb-name">The Build-Up<br>Academy</div>
+      <p>Field-tested preconstruction training for GCs and trade subs who bid competitively.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workshop.html">The Workshop</a></li>
+        <li><a href="instructor.html">Instructor</a></li>
+        <li><a href="#register">Reserve a Seat</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:arron@gritforge.co">arron@gritforge.co</a></li>
+        <li><a href="tel:7202052859">720-205-2859</a></li>
+        <li><a href="https://gritforge.co">gritforge.co</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 GritForge Consultants. All rights reserved.</span>
+    <span>thebuildupacademy.com · Denver, CO</span>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('load', () => {
+    setTimeout(() => { document.getElementById('mf').style.width = '30%'; }, 500);
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  function handleReg() {
+    const fn = document.querySelector('input[placeholder="John"]').value;
+    const em = document.querySelector('input[type="email"]').value;
+    if (!fn || !em) { alert('Please fill in your name and email.'); return; }
+    // window.location.href = 'https://buy.stripe.com/YOUR_LINK';
+    alert('Wire in your Stripe Payment Link here.');
+  }
+</script>
+</body>
+</html>
