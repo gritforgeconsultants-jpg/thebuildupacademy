@@ -12,13 +12,13 @@
   --maroon-dark:  #6B1714;   /* Brick Dark — footer, dark panels */
   --maroon-light: #C42924;   /* Brick Light — hover states */
 
-  --steel:        #0F1E2E;   /* Dark Navy — primary background */
-  --steel-mid:    #162637;   /* Navy Mid — card backgrounds */
-  --steel-light:  #1F3347;   /* Navy Light — borders, dividers */
+  --steel:        #1C1C1E;   /* Dark Charcoal — primary background (from logo) */
+  --steel-mid:    #242426;   /* Charcoal Mid — card backgrounds */
+  --steel-light:  #2E2E32;   /* Charcoal Light — borders, dividers */
 
   --steel-blue:   #6E8AA9;   /* Steel Blue — secondary brand color */
-  --iron:         #4A6480;   /* Iron — subtle dividers, muted elements */
-  --fog:          #A7C0D8;   /* Light Steel — body text on dark, accents */
+  --iron:         #4A4A4E;   /* Iron — subtle dividers, muted elements */
+  --fog:          #9A9690;   /* Warm Gray — from GRITFORGE wordmark tone */
 
   --bone:         #E8E0D4;   /* Bone/Cream — body text on dark */
   --amber:        #C8923A;   /* Amber/Gold — highlights, hero accent */
@@ -64,7 +64,7 @@ body::before {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(15, 30, 46, 0.96);
+  background: rgba(28, 28, 30, 0.96);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(161, 35, 30, 0.35);
   display: flex;
