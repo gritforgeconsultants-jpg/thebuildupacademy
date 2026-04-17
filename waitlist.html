@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the Waitlist | The Build-Up Academy</title>
+<meta name="description" content="Get notified when the next Build-Up Academy cohort opens. Join the waitlist for session dates, pricing, and updates.">
+<link rel="canonical" href="https://thebuildupacademy.com/waitlist.html">
+<link rel="stylesheet" href="style.css">
+<style>
+
+/* ── PAGE SHELL ── */
+.page-hero {
+  padding: 88px var(--pad) 72px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+/* ── LEFT COLUMN ── */
+.wl-left { padding-top: 8px; }
+
+.wl-label {
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--maroon-light);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.wl-label::before { content: ''; width: 24px; height: 1px; background: var(--maroon-light); }
+
+.wl-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+  text-transform: uppercase;
+  color: var(--cream);
+  line-height: 0.92;
+  margin-bottom: 24px;
+}
+.wl-title .a { color: var(--amber); display: block; }
+
+.wl-desc {
+  font-size: 0.95rem;
+  color: var(--fog);
+  line-height: 1.78;
+  margin-bottom: 36px;
+  max-width: 420px;
+}
+.wl-desc strong { color: var(--bone); }
+
+/* What you get on signup */
+.wl-gets {
+  list-style: none;
+  margin-bottom: 36px;
+  border: 1px solid var(--steel-light);
+}
+.wl-gets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--steel-light);
+  font-size: 0.86rem;
+  color: var(--bone);
+  line-height: 1.55;
+}
+.wl-gets li:last-child { border-bottom: none; }
+.wl-gets .ic {
+  color: var(--amber);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+  width: 18px;
+}
+
+/* Brief workshop recap */
+.recap {
+  background: var(--steel-mid);
+  border: 1px solid var(--steel-light);
+  border-left: 3px solid var(--maroon);
+  padding: 20px 22px;
+}
+.recap-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 10px;
+}
+.recap-stats {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--steel-light);
+  margin-bottom: 12px;
+}
+.rs {
+  flex: 1;
+  padding: 10px 12px;
+  border-right: 1px solid var(--steel-light);
+}
+.rs:last-child { border-right: none; }
+.rs-n {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: var(--amber);
+  line-height: 1;
+}
+.rs-l {
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: var(--fog);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.recap p {
+  font-size: 0.8rem;
+  color: var(--fog);
+  line-height: 1.65;
+}
+.recap a {
+  color: var(--amber-light);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+.recap a:hover { text-decoration: underline; }
+
+/* ── RIGHT COLUMN — FORM CARD ── */
+.wl-card {
+  background: var(--steel-mid);
+  border: 1px solid var(--steel-light);
+  position: relative;
+}
+.wl-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--maroon), var(--amber));
+}
+
+.wl-card-header {
+  padding: 24px 28px 18px;
+  border-bottom: 1px solid var(--steel-light);
+}
+.wl-card-tag {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--maroon-light);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.live-dot {
+  width: 6px; height: 6px;
+  background: var(--amber);
+  border-radius: 50%;
+  animation: pulse 1.8s infinite;
+  flex-shrink: 0;
+}
+.wl-card-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: var(--cream);
+  line-height: 1.05;
+}
+.wl-card-sub {
+  font-size: 0.76rem;
+  color: var(--fog);
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+.wl-form { padding: 24px 28px 28px; }
+
+.field { display: flex; flex-direction: column; margin-bottom: 10px; }
+.field label {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--fog);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.field input,
+.field select,
+.field textarea {
+  background: var(--steel);
+  border: 1px solid var(--steel-light);
+  color: var(--cream);
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  outline: none;
+  transition: border-color 0.2s;
+  appearance: none;
+  resize: vertical;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus { border-color: var(--maroon-light); }
+.field input::placeholder,
+.field textarea::placeholder { color: var(--iron); }
+.field select option { background: var(--steel-mid); }
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.field-row .field { margin-bottom: 0; }
+
+.intent-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.intent-opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid var(--steel-light);
+  background: var(--steel);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  user-select: none;
+}
+.intent-opt:has(input:checked) {
+  border-color: var(--maroon-light);
+  background: rgba(161,35,30,0.12);
+}
+.intent-opt input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--maroon);
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+}
+.intent-opt-label {
+  font-size: 0.82rem;
+  color: var(--bone);
+  line-height: 1.4;
+}
+.intent-opt-label span {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--fog);
+  margin-top: 1px;
+}
+
+.wl-btn {
+  width: 100%;
+  background: var(--maroon);
+  color: var(--cream);
+  border: 1px solid var(--maroon-light);
+  padding: 16px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 14px;
+  transition: all 0.2s;
+}
+.wl-btn:hover { background: var(--maroon-light); color: var(--amber-light); }
+
+.form-note {
+  font-size: 0.67rem;
+  color: var(--iron);
+  margin-top: 10px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ── SUCCESS STATE ── */
+.wl-success {
+  display: none;
+  padding: 44px 28px;
+  text-align: center;
+}
+.wl-success.show { display: block; }
+.wl-form.hide { display: none; }
+.wl-card-header.hide { display: none; }
+
+.success-icon {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 2.8rem;
+  color: var(--amber);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.success-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-bottom: 10px;
+}
+.success-msg {
+  font-size: 0.86rem;
+  color: var(--fog);
+  line-height: 1.72;
+  margin-bottom: 22px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.success-next {
+  list-style: none;
+  text-align: left;
+  border: 1px solid var(--steel-light);
+  margin-bottom: 22px;
+}
+.success-next li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--steel-light);
+  font-size: 0.82rem;
+  color: var(--bone);
+}
+.success-next li:last-child { border-bottom: none; }
+.success-next .sn-n {
+  font-family: var(--font-display);
+  font-weight: 900;
+  color: var(--maroon-light);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  width: 20px;
+}
+
+/* ── BOTTOM STRIP ── */
+.strip {
+  background: var(--steel-mid);
+  border-top: 1px solid var(--steel-light);
+  border-bottom: 1px solid var(--steel-light);
+  padding: 48px var(--pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.strip-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.strip-text .st-label {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--maroon-light);
+  margin-bottom: 6px;
+}
+.strip-text .st-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: var(--cream);
+  line-height: 1;
+}
+.strip-text .st-sub {
+  font-size: 0.82rem;
+  color: var(--fog);
+  margin-top: 4px;
+}
+.strip-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .page-hero {
+    grid-template-columns: 1fr;
+    gap: 44px;
+    padding: 52px 20px 60px;
+  }
+  .field-row { grid-template-columns: 1fr; }
+  .strip { padding: 40px 20px; }
+  .strip-inner { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-hex"><span>GF</span></div>
+    <div class="nav-wordmark">
+      <span class="nw-name">GritForge</span>
+      <span class="nw-sub">Forged with Grit</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="workshop.html">The Workshop</a></li>
+    <li><a href="waitlist.html" class="active">Join Waitlist</a></li>
+    <li><a href="workshop.html#register" class="nav-cta">Claim Your Seat — $500</a></li>
+  </ul>
+</nav>
+
+<!-- MAIN -->
+<main>
+<div class="page-hero">
+
+  <!-- LEFT: Context + what they get -->
+  <div class="wl-left">
+    <div class="wl-label fade d1">The Build-Up Academy</div>
+    <h1 class="wl-title fade d2">
+      Stay in the<br>
+      <span class="a">Loop.</span>
+    </h1>
+    <p class="wl-desc fade d3">
+      The next cohort date is confirmed when seats fill. Drop your info below and you'll be the first to know —
+      <strong>session dates, seat availability, and any updates</strong> go to the list first.
+    </p>
+
+    <ul class="wl-gets fade d4">
+      <li><span class="ic">→</span>Notification the moment a cohort date is confirmed</li>
+      <li><span class="ic">→</span>First access to seats before public announcement</li>
+      <li><span class="ic">→</span>Workshop details, curriculum overview, and what to expect</li>
+      <li><span class="ic">→</span>Direct line to ask questions before you commit</li>
+    </ul>
+
+    <div class="recap fade d5">
+      <div class="recap-title">The Workshop — Quick Overview</div>
+      <div class="recap-stats">
+        <div class="rs"><div class="rs-n">6hr</div><div class="rs-l">Live via Zoom</div></div>
+        <div class="rs"><div class="rs-n">10</div><div class="rs-l">Seats Max</div></div>
+        <div class="rs"><div class="rs-n">$500</div><div class="rs-l">Per Seat</div></div>
+        <div class="rs"><div class="rs-n">6</div><div class="rs-l">Modules</div></div>
+      </div>
+      <p>A hands-on preconstruction and bidding workshop for GCs and trade subs. Field-tested systems, live bid review, real templates you use Monday. <a href="workshop.html">Full details →</a></p>
+    </div>
+  </div>
+
+  <!-- RIGHT: Form -->
+  <div class="wl-card fade d3">
+
+    <div class="wl-card-header" id="formHeader">
+      <div class="wl-card-tag"><span class="live-dot"></span> Waitlist Open</div>
+      <div class="wl-card-title">Join the Waitlist</div>
+      <div class="wl-card-sub">No commitment. No spam. Just the updates that matter.</div>
+    </div>
+
+    <div class="wl-form" id="wlForm">
+
+      <div class="field-row">
+        <div class="field">
+          <label>First Name</label>
+          <input type="text" id="fn" placeholder="John">
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input type="text" id="ln" placeholder="Smith">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Email Address</label>
+        <input type="email" id="em" placeholder="you@yourcompany.com">
+      </div>
+
+      <div class="field">
+        <label>Company Name</label>
+        <input type="text" id="co" placeholder="ABC Contractors LLC">
+      </div>
+
+      <div class="field">
+        <label>Your Role</label>
+        <select id="role">
+          <option value="" disabled selected>Select your role</option>
+          <option>General Contractor / Owner</option>
+          <option>Trade Sub / Owner</option>
+          <option>Estimator</option>
+          <option>Project Manager moving into estimating</option>
+          <option>Foreman / Field Sup moving into estimating</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="field" style="margin-bottom:6px;">
+        <label>I want to (select all that apply)</label>
+      </div>
+      <div class="intent-group">
+        <label class="intent-opt">
+          <input type="checkbox" id="opt-notify" checked>
+          <div class="intent-opt-label">
+            Be notified when the next cohort opens
+            <span>I'll get an email when a date is confirmed</span>
+          </div>
+        </label>
+        <label class="intent-opt">
+          <input type="checkbox" id="opt-info">
+          <div class="intent-opt-label">
+            Receive more information about the workshop
+            <span>Full curriculum, what's included, who it's for</span>
+          </div>
+        </label>
+        <label class="intent-opt">
+          <input type="checkbox" id="opt-question">
+          <div class="intent-opt-label">
+            Ask a question before I decide
+            <span>Arron will respond directly — usually within 24 hours</span>
+          </div>
+        </label>
+      </div>
+
+      <div class="field" id="questionField" style="display:none; margin-top:4px;">
+        <label>Your Question</label>
+        <textarea id="question" rows="3" placeholder="What would you like to know?"></textarea>
+      </div>
+
+      <button class="wl-btn" onclick="handleWaitlist()">Join the Waitlist →</button>
+      <p class="form-note">No payment required · Unsubscribe anytime · Questions? <a href="mailto:arron@thebuildupacademy.com" style="color:var(--fog);">arron@thebuildupacademy.com</a></p>
+    </div>
+
+    <!-- Success state -->
+    <div class="wl-success" id="wlSuccess">
+      <div class="success-icon">✓</div>
+      <div class="success-title">You're on the list.</div>
+      <p class="success-msg">We'll be in touch. Here's what happens next:</p>
+      <ul class="success-next">
+        <li><span class="sn-n">01</span>Check your inbox — a confirmation is on its way to you now.</li>
+        <li><span class="sn-n">02</span>When the next cohort date is confirmed, you'll hear first.</li>
+        <li><span class="sn-n">03</span>If you asked a question, Arron will reply directly — usually within 24 hours.</li>
+      </ul>
+      <a href="workshop.html" class="btn btn-ghost" style="font-size:0.78rem;padding:11px 24px;">Read Full Workshop Details →</a>
+    </div>
+
+  </div>
+</div>
+</main>
+
+<!-- BOTTOM STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-text">
+      <div class="st-label">Ready to commit now?</div>
+      <div class="st-title">Seats are $500 — 10 max.</div>
+      <div class="st-sub">Reserve a seat directly if you're ready. No waitlist required.</div>
+    </div>
+    <div class="strip-actions">
+      <a href="workshop.html#register" class="btn btn-primary">Claim Your Seat — $500</a>
+      <a href="workshop.html" class="btn btn-ghost">Full Workshop Details</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand-block">
+      <div class="fb-presents">GritForge Presents</div>
+      <div class="fb-name">The Build-Up<br>Academy</div>
+      <p>Field-tested preconstruction training for GCs and trade subs who bid competitively.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workshop.html">The Workshop</a></li>
+        <li><a href="waitlist.html">Join Waitlist</a></li>
+        <li><a href="workshop.html#register">Reserve a Seat</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:arron@thebuildupacademy.com">arron@thebuildupacademy.com</a></li>
+        <li><a href="tel:7202052859">720-205-2859</a></li>
+        <li><a href="https://thebuildupacademy.com">thebuildupacademy.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 GritForge Consultants · All rights reserved.</span>
+    <span>thebuildupacademy.com · Denver, CO</span>
+  </div>
+</footer>
+
+<script>
+  // Show/hide question field when checkbox is toggled
+  document.getElementById('opt-question').addEventListener('change', function() {
+    const qf = document.getElementById('questionField');
+    qf.style.display = this.checked ? 'flex' : 'none';
+  });
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  function handleWaitlist() {
+    const fn   = document.getElementById('fn').value.trim();
+    const em   = document.getElementById('em').value.trim();
+    const role = document.getElementById('role').value;
+
+    if (!fn) { document.getElementById('fn').focus(); alert('Please enter your first name.'); return; }
+    if (!em || !em.includes('@')) { document.getElementById('em').focus(); alert('Please enter a valid email address.'); return; }
+
+    // Wire in your form backend, Mailchimp, ConvertKit, Formspree, etc. here:
+    // const payload = {
+    //   name: fn + ' ' + document.getElementById('ln').value.trim(),
+    //   email: em,
+    //   company: document.getElementById('co').value.trim(),
+    //   role: role,
+    //   notify: document.getElementById('opt-notify').checked,
+    //   wantsInfo: document.getElementById('opt-info').checked,
+    //   hasQuestion: document.getElementById('opt-question').checked,
+    //   question: document.getElementById('question').value.trim()
+    // };
+
+    document.getElementById('formHeader').classList.add('hide');
+    document.getElementById('wlForm').classList.add('hide');
+    document.getElementById('wlSuccess').classList.add('show');
+    window.scrollTo({ top: document.querySelector('.wl-card').offsetTop - 80, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
