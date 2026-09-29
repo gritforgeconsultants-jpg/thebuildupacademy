@@ -2,848 +2,422 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Build-Up Academy | Preconstruction &amp; Bidding Training for Contractors</title>
-<meta name="description" content="6-hour live preconstruction workshop for GCs and trade subs. Learn to price with confidence, eliminate scope gaps, and win more bids. 10 seats max. Virtual via Zoom.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build-Up Academy | Construction-Trades Workforce Training Nonprofit, Denver CO</title>
+<meta name="description" content="Build-Up Academy is a construction-trades workforce training nonprofit creating real pathways into the trades, starting with steel and structural work in Denver and the Colorado Front Range.">
 <link rel="canonical" href="https://thebuildupacademy.com/">
-<!-- Open Graph -->
-<meta property="og:title" content="The Build-Up Academy — Bidding Workshop for Contractors">
-<meta property="og:description" content="6-hour live preconstruction training for GCs and trade subs. 10 seats. $500.">
-<meta property="og:image" content="https://thebuildupacademy.com/og-preview.jpg">
-<meta property="og:url" content="https://thebuildupacademy.com">
+<meta name="theme-color" content="#08131f">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="The Build-Up Academy">
-<!-- Twitter Card -->
+<meta property="og:site_name" content="Build-Up Academy">
+<meta property="og:title" content="Build-Up Academy | Real pathways into the trades">
+<meta property="og:description" content="A construction-trades workforce training nonprofit. Steel and structural first. Denver and the Colorado Front Range.">
+<meta property="og:url" content="https://thebuildupacademy.com/">
+<meta property="og:image" content="https://thebuildupacademy.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Build-Up Academy — GritForge Presents">
-<meta name="twitter:description" content="Where contractors stop guessing and start pricing like professionals. 10 seats. $500. Cohort 1 forming now.">
-<meta name="twitter:image" content="https://thebuildupacademy.com/GF_Logo_v3.png">
+<meta name="twitter:title" content="Build-Up Academy | Real pathways into the trades">
+<meta name="twitter:description" content="A construction-trades workforce training nonprofit. Steel and structural first.">
+<meta name="twitter:image" content="https://thebuildupacademy.com/og-image.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-
-/* ══ HERO ══════════════════════════════════════════════════ */
-
-.hero {
-  min-height: calc(100vh - var(--nav-h));
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-left {
-  padding: 80px var(--pad) 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-}
-
-.brand-lockup {
-  display: inline-flex;
-  align-items: center;
-  gap: 13px;
-  margin-bottom: 24px;
-  opacity: 0.68;
-}
-.gf-hex {
-  width: 44px;
-  height: 50px;
-  background: var(--maroon);
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.gf-hex span {
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 1.15rem;
-  color: var(--bone);
-  letter-spacing: -0.02em;
-}
-.gf-wordmark {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  line-height: 1;
-}
-.gf-wordmark .gw-name {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.75rem;
-  letter-spacing: 0.1em;
-  color: var(--bone);
-  text-transform: uppercase;
-}
-.gf-wordmark .gw-sub {
-  font-family: var(--font-display);
-  font-size: 0.52rem;
-  letter-spacing: 0.38em;
-  color: var(--iron);
-  text-transform: uppercase;
-}
-
-.gf-presents {
-  font-family: var(--font-display);
-  font-size: 0.68rem;
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
-  color: var(--fog);
-  margin-bottom: 10px;
-}
-
-.hero-title {
-  font-family: var(--font-display);
-  font-weight: 900;
-  text-transform: uppercase;
-  line-height: 0.87;
-  color: var(--cream);
-  margin-bottom: 6px;
-}
-.hero-title .the  { font-size: clamp(2rem, 4vw, 3.8rem); display: block; }
-.hero-title .name { font-size: clamp(4.5rem, 8vw, 7.5rem); display: block; color: var(--amber); }
-.hero-title .acad {
-  font-size: clamp(1.1rem, 2vw, 1.8rem);
-  display: block;
-  color: var(--fog);
-  font-weight: 300;
-  letter-spacing: 0.28em;
-  margin-top: 6px;
-}
-
-.hero-rule {
-  width: 56px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--maroon), var(--amber));
-  margin: 28px 0;
-}
-
-.hero-tagline {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(1.05rem, 1.55vw, 1.3rem);
-  color: var(--bone);
-  line-height: 1.65;
-  max-width: 440px;
-  margin-bottom: 40px;
-}
-
-.hero-proof {
-  display: flex;
-  gap: 0;
-  border: 1px solid var(--steel-light);
-  margin-bottom: 36px;
-}
-.proof-item {
-  padding: 14px 20px;
-  border-right: 1px solid var(--steel-light);
-  flex: 1;
-}
-.proof-item:last-child { border-right: none; }
-.proof-n {
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 1.5rem;
-  color: var(--amber);
-  line-height: 1;
-  display: block;
-}
-.proof-l {
-  font-size: 0.6rem;
-  letter-spacing: 0.14em;
-  color: var(--fog);
-  text-transform: uppercase;
-  margin-top: 3px;
-  display: block;
-}
-
-.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-
-/* Hero right — workshop card */
-.hero-right {
-  background: var(--steel-mid);
-  border-left: 1px solid var(--steel-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-.hero-right::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(145deg, rgba(161,35,30,0.18) 0%, transparent 65%);
-}
-.hero-right::after {
-  content: 'THE\ABUILD-UP';
-  white-space: pre;
-  position: absolute;
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 20vw;
-  color: rgba(28, 28, 30, 0.85);
-  bottom: -4vw;
-  right: -3vw;
-  line-height: 0.82;
-  letter-spacing: -0.02em;
-  pointer-events: none;
-  text-transform: uppercase;
-}
-
-.workshop-card {
-  background: var(--steel);
-  border: 1px solid var(--steel-light);
-  width: 368px;
-  position: relative;
-  z-index: 2;
-}
-.workshop-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--maroon), var(--amber));
-}
-.wc-tag {
-  background: var(--maroon-dark);
-  padding: 10px 22px;
-  font-family: var(--font-display);
-  font-size: 0.6rem;
-  letter-spacing: 0.28em;
-  color: var(--maroon-light);
-  text-transform: uppercase;
-  border-bottom: 1px solid rgba(161,35,30,0.4);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.wc-tag .live-dot {
-  width: 6px; height: 6px;
-  background: var(--amber);
-  border-radius: 50%;
-  animation: pulse 1.8s infinite;
-}
-
-.wc-body { padding: 28px 24px; }
-.wc-title {
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 1.55rem;
-  text-transform: uppercase;
-  color: var(--cream);
-  line-height: 1;
-  margin-bottom: 3px;
-}
-.wc-sub {
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  color: var(--amber);
-  text-transform: uppercase;
-  margin-bottom: 18px;
-}
-
-.wc-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--steel-light);
-  border: 1px solid var(--steel-light);
-  margin-bottom: 18px;
-}
-.wcs { background: var(--steel-mid); padding: 11px 13px; }
-.wcs-n { font-family: var(--font-display); font-weight: 900; font-size: 1.35rem; color: var(--amber); line-height: 1; }
-.wcs-l { font-size: 0.58rem; letter-spacing: 0.1em; color: var(--fog); text-transform: uppercase; margin-top: 2px; }
-
-.meter { margin-bottom: 16px; }
-.meter-lbl { display: flex; justify-content: space-between; font-size: 0.62rem; letter-spacing: 0.1em; color: var(--fog); text-transform: uppercase; margin-bottom: 6px; }
-.meter-lbl strong { color: var(--amber); }
-.meter-bar { height: 3px; background: var(--steel-light); position: relative; }
-.meter-fill { position: absolute; left: 0; top: 0; height: 100%; width: 0; background: linear-gradient(90deg, var(--maroon), var(--amber)); transition: width 1.2s ease 0.6s; }
-
-.wc-date {
-  background: var(--maroon-dark);
-  padding: 10px 14px;
-  margin-bottom: 16px;
-  border: 1px solid rgba(161,35,30,0.5);
-  font-size: 0.76rem;
-  color: var(--fog);
-}
-.wc-date strong { color: var(--amber-light); display: block; }
-
-.includes { list-style: none; margin-bottom: 20px; }
-.includes li {
-  padding: 7px 0;
-  border-bottom: 1px solid var(--steel-light);
-  font-size: 0.82rem;
-  color: var(--bone);
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
-.includes li::before { content: '→'; color: var(--amber); font-size: 0.72rem; flex-shrink: 0; margin-top: 2px; }
-.badge { font-size: 0.58rem; background: var(--maroon); color: var(--amber-light); padding: 2px 5px; margin-left: auto; flex-shrink: 0; }
-
-.wc-hook {
-  font-size: 0.76rem;
-  color: var(--amber-light);
-  font-style: italic;
-  margin-bottom: 18px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--steel-light);
-}
-
-/* ══ PILLARS ═══════════════════════════════════════════════ */
-
-.pillars {
-  background: var(--steel-mid);
-  border-top: 1px solid var(--steel-light);
-  border-bottom: 1px solid var(--steel-light);
-  padding: 72px var(--pad);
-}
-.pillars-inner { max-width: var(--max-w); margin: 0 auto; }
-.pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--steel-light);
-  border: 1px solid var(--steel-light);
-  margin-top: 44px;
-}
-.pillar { background: var(--steel); padding: 36px 32px; position: relative; overflow: hidden; }
-.pillar::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 2px;
-  background: transparent;
-  transition: background 0.3s;
-}
-.pillar:hover::after { background: linear-gradient(90deg, var(--maroon), var(--amber)); }
-.pillar-num { font-family: var(--font-display); font-weight: 900; font-size: 3.8rem; color: rgba(161,35,30,0.2); line-height: 1; margin-bottom: 10px; }
-.pillar-title { font-family: var(--font-display); font-weight: 700; font-size: 1rem; text-transform: uppercase; color: var(--amber); margin-bottom: 9px; }
-.pillar-desc { font-size: 0.88rem; color: var(--fog); line-height: 1.72; }
-
-/* ══ TRANSFORMATION ═════════════════════════════════════════ */
-
-.transform { padding: 72px var(--pad); }
-.transform-inner { max-width: var(--max-w); margin: 0 auto; }
-.t-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--steel-light);
-  border: 1px solid var(--steel-light);
-  margin-top: 44px;
-}
-.t-item { background: var(--steel-mid); padding: 26px 28px; position: relative; }
-.t-num { font-family: var(--font-display); font-weight: 900; font-size: 2rem; color: rgba(161,35,30,0.22); position: absolute; top: 10px; right: 14px; line-height: 1; }
-.t-title { font-family: var(--font-display); font-weight: 700; font-size: 0.92rem; text-transform: uppercase; color: var(--amber); margin-bottom: 7px; letter-spacing: 0.03em; }
-.t-desc { font-size: 0.84rem; color: var(--fog); line-height: 1.65; }
-
-/* ══ CURRICULUM ════════════════════════════════════════════ */
-
-.curriculum { padding: 72px var(--pad); background: var(--steel-mid); border-top: 1px solid var(--steel-light); border-bottom: 1px solid var(--steel-light); }
-.curriculum-inner { max-width: var(--max-w); margin: 0 auto; }
-.mod-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1px;
-  background: var(--steel-light);
-  border: 1px solid var(--steel-light);
-  margin-top: 44px;
-}
-.mod { background: var(--steel); padding: 26px 28px; position: relative; transition: background 0.2s; }
-.mod:hover { background: var(--steel-light); }
-.mod-n { font-family: var(--font-display); font-weight: 900; font-size: 2.6rem; color: rgba(161,35,30,0.18); position: absolute; top: 10px; right: 14px; line-height: 1; }
-.mod-time { font-size: 0.58rem; letter-spacing: 0.2em; color: var(--maroon-light); text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
-.mod-time::before { content: ''; width: 11px; height: 1px; background: var(--maroon-light); }
-.mod-title { font-family: var(--font-display); font-weight: 700; font-size: 0.98rem; text-transform: uppercase; color: var(--cream); margin-bottom: 9px; max-width: calc(100% - 40px); letter-spacing: 0.03em; }
-.mod-desc { font-size: 0.8rem; color: var(--fog); line-height: 1.6; }
-
-/* ══ INSTRUCTOR ════════════════════════════════════════════ */
-
-.instructor { padding: 72px var(--pad); }
-.instructor-inner {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 56px;
-  align-items: start;
-}
-.av {
-  width: 148px; height: 148px;
-  background: var(--maroon-dark);
-  border: 2px solid var(--maroon);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 2.5rem;
-  color: var(--amber);
-  position: relative;
-  flex-shrink: 0;
-}
-.av::after {
-  content: '';
-  position: absolute;
-  bottom: -2px; right: -2px;
-  width: 20px; height: 20px;
-  background: var(--amber);
-}
-.av-name { font-family: var(--font-display); font-weight: 900; font-size: 1.9rem; text-transform: uppercase; color: var(--cream); margin-bottom: 3px; }
-.av-role { font-size: 0.68rem; letter-spacing: 0.16em; color: var(--amber); text-transform: uppercase; margin-bottom: 18px; }
-.av-creds {
-  display: flex;
-  gap: 1px;
-  background: var(--steel-light);
-  border: 1px solid var(--steel-light);
-  margin-bottom: 18px;
-}
-.av-cred { background: var(--steel-mid); padding: 12px 18px; flex: 1; }
-.av-cred-n { font-family: var(--font-display); font-weight: 900; font-size: 1.4rem; color: var(--amber); line-height: 1; }
-.av-cred-l { font-size: 0.6rem; letter-spacing: 0.1em; color: var(--fog); text-transform: uppercase; margin-top: 2px; }
-.av-bio { font-size: 0.92rem; color: var(--fog); line-height: 1.78; margin-bottom: 14px; }
-.av-bio strong { color: var(--bone); }
-.tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 22px; }
-.tag { font-size: 0.64rem; color: var(--fog); display: flex; align-items: center; gap: 5px; }
-.tag::before { content: '■'; color: var(--maroon-light); font-size: 0.4rem; }
-
-/* ══ GUARANTEE ══════════════════════════════════════════════ */
-
-.guarantee {
-  padding: 44px var(--pad);
-  background: var(--maroon-dark);
-  border-top: 1px solid rgba(161,35,30,0.4);
-  border-bottom: 1px solid rgba(161,35,30,0.4);
-  display: flex;
-  align-items: flex-start;
-  gap: 28px;
-}
-.g-icon { font-family: var(--font-display); font-weight: 900; font-size: 2.8rem; color: var(--amber); line-height: 1; flex-shrink: 0; }
-.g-title { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--cream); margin-bottom: 7px; }
-.g-text { font-size: 0.85rem; color: var(--fog); line-height: 1.7; max-width: 620px; }
-.g-text strong { color: var(--amber-light); }
-
-/* ══ REGISTER ═══════════════════════════════════════════════ */
-
-.reg {
-  padding: 88px var(--pad);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.reg::before {
-  content: 'REGISTER';
-  position: absolute;
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 18vw;
-  color: rgba(28, 28, 30, 0.65);
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  white-space: nowrap;
-  letter-spacing: 0.1em;
-}
-.reg-title { font-family: var(--font-display); font-weight: 900; font-size: clamp(2rem, 3.8vw, 3.2rem); text-transform: uppercase; color: var(--cream); position: relative; z-index: 2; margin-bottom: 10px; }
-.reg-title .a { color: var(--amber); }
-.reg-sub { font-size: 0.9rem; color: var(--fog); position: relative; z-index: 2; margin-bottom: 36px; }
-
-.reg-or-full {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  position: relative;
-  z-index: 2;
-  margin-bottom: 32px;
-  flex-wrap: wrap;
-}
-.reg-or-full .or-divider {
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  color: var(--iron);
-  text-transform: uppercase;
-}
-
-.form { max-width: 448px; margin: 0 auto; position: relative; z-index: 2; }
-.row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
-.field { display: flex; flex-direction: column; text-align: left; }
-.field.full { grid-column: 1/-1; }
-.field label { font-size: 0.6rem; letter-spacing: 0.2em; color: var(--fog); text-transform: uppercase; margin-bottom: 5px; }
-.field input, .field select {
-  background: var(--steel-mid);
-  border: 1px solid var(--steel-light);
-  color: var(--cream);
-  padding: 12px 14px;
-  font-family: var(--font-body);
-  font-size: 0.86rem;
-  outline: none;
-  transition: border-color 0.2s;
-  appearance: none;
-}
-.field input:focus, .field select:focus { border-color: var(--maroon-light); }
-.field input::placeholder { color: var(--iron); }
-.field select option { background: var(--steel-mid); }
-.sub-btn {
-  width: 100%;
-  background: var(--maroon);
-  color: var(--cream);
-  border: 1px solid var(--maroon-light);
-  padding: 16px;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.98rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  cursor: pointer;
-  margin-top: 12px;
-  transition: all 0.2s;
-}
-.sub-btn:hover { background: var(--maroon-light); color: var(--amber-light); }
-.form-note { font-size: 0.68rem; color: var(--iron); margin-top: 11px; }
-
-/* ══ RESPONSIVE ════════════════════════════════════════════ */
-
-@media (max-width: 1000px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero-left { padding: 52px 20px; }
-  .hero-right { display: none; }
-  .pillars, .transform, .curriculum, .instructor, .reg { padding: 52px 20px; }
-  .guarantee { padding: 36px 20px; flex-direction: column; }
-  .pillars-grid, .t-grid, .mod-grid { grid-template-columns: 1fr; }
-  .instructor-inner { grid-template-columns: 1fr; gap: 28px; }
-  .av { width: 88px; height: 88px; font-size: 1.7rem; }
-  .av-creds { flex-wrap: wrap; }
-  .row { grid-template-columns: 1fr; }
-  .hero-proof { flex-wrap: wrap; }
-  .proof-item { border-right: none; border-bottom: 1px solid var(--steel-light); }
-}
-</style>
-</head>
-<body>
-
-<!-- NAV -->
-<nav class="site-nav">
-  <a href="index.html" class="nav-logo">
-    <div class="nav-hex"><span>GF</span></div>
-    <div class="nav-wordmark">
-      <span class="nw-name">GritForge</span>
-      <span class="nw-sub">Forged with Grit</span>
-    </div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="workshop.html">The Workshop</a></li>
-    <li><a href="waitlist.html">Join Waitlist</a></li>
-    <li><a href="workshop.html#register" class="nav-cta">Claim Your Seat — $500</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-left">
-    <div class="brand-lockup fade d1">
-      <div class="gf-hex"><span>GF</span></div>
-      <div class="gf-wordmark">
-        <span class="gw-name">GritForge</span>
-        <span class="gw-sub">Forged with Grit</span>
-      </div>
-    </div>
-    <div class="gf-presents fade d2">Presents</div>
-    <h1 class="hero-title fade d3" style="font-size:clamp(1rem,1.6vw,1.5rem);letter-spacing:0.06em;font-weight:700;margin-bottom:4px;">Preconstruction &amp; Bidding Training for Contractors</h1>
-    <h2 class="hero-title">
-      <span class="the fade d3">The</span>
-      <span class="name fade d3">Build-Up</span>
-      <span class="acad fade d3">Academy</span>
-    </h2>
-    <div class="hero-rule fade d3"></div>
-    <p class="hero-tagline fade d4">
-      Where contractors stop guessing and start pricing like professionals.
-    </p>
-    <div class="hero-proof fade d4">
-      <div class="proof-item"><span class="proof-n">$4.3M+</span><span class="proof-l">Active Pipeline</span></div>
-      <div class="proof-item"><span class="proof-n">15+</span><span class="proof-l">Yrs in Field</span></div>
-      <div class="proof-item"><span class="proof-n">10</span><span class="proof-l">Seats Per Cohort</span></div>
-      <div class="proof-item"><span class="proof-n">$500</span><span class="proof-l">Per Seat</span></div>
-    </div>
-    <div class="hero-actions fade d5">
-      <a href="workshop.html#register" class="btn btn-primary">Claim Your Seat — $500</a>
-      <a href="workshop.html" class="btn btn-ghost">Full Workshop Details</a>
-    </div>
-  </div>
-
-  <div class="hero-right">
-    <div class="workshop-card fade d3">
-      <div class="wc-tag">
-        <span class="live-dot"></span>
-        Cohort 1 — Now Forming
-      </div>
-      <div class="wc-body">
-        <div class="wc-title">The Build-Up</div>
-        <div class="wc-sub">6-Hour Live Preconstruction Workshop</div>
-        <p class="wc-hook">One missed scope item costs more than this. One improved win pays for it 20× over.</p>
-        <div class="wc-stats">
-          <div class="wcs"><div class="wcs-n">10</div><div class="wcs-l">Max Seats</div></div>
-          <div class="wcs"><div class="wcs-n">6hr</div><div class="wcs-l">Live Session</div></div>
-          <div class="wcs"><div class="wcs-n">$500</div><div class="wcs-l">Per Seat</div></div>
-          <div class="wcs"><div class="wcs-n">Zoom</div><div class="wcs-l">Virtual</div></div>
-        </div>
-        <div class="meter">
-          <div class="meter-lbl"><span>Seats Remaining</span><span>Limited seats available — inquire for current availability.</span></div>
-          <div class="meter-bar"><div class="meter-fill" id="mf"></div></div>
-        </div>
-        <div class="wc-date">
-          <strong>Cohort date confirmed upon fill — join the waitlist to be notified.</strong>
-        </div>
-        <ul class="includes">
-          <li>Workbook with 12+ templates and checklists</li>
-          <li>30-day recording access</li>
-          <li>GritForge Bid Prep Reference Guide</li>
-          <li>Scope sheets — 6 trade divisions</li>
-          <li><span>30-min follow-up call with instructor</span><span class="badge">First 5 seats</span></li>
-        </ul>
-        <a href="workshop.html#register" class="btn btn-amber" style="width:100%;text-align:center;display:block;">Reserve Your Seat</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PILLARS -->
-<div class="divider" style="padding:0 var(--pad);max-width:var(--max-w);margin:52px auto 0;">
-  <div class="line"></div><div class="lbl">What This Academy Stands On</div><div class="line"></div>
-</div>
-<section class="pillars">
-  <div class="pillars-inner">
-    <div class="eyebrow">Three Non-Negotiables</div>
-    <h2 class="section-title">Built different.<span class="a"> On purpose.</span></h2>
-    <p style="color:var(--fog);font-size:0.9rem;line-height:1.7;margin-top:14px;max-width:640px;">This bidding workshop for contractors is built around one question: does it work in the field? Every method here has been tested on live bids with real money on the line.</p>
-    <div class="pillars-grid">
-      <div class="pillar reveal">
-        <div class="pillar-num">01</div>
-        <div class="pillar-title">Field Logic — Not Theory</div>
-        <p class="pillar-desc">Every framework here came from real bids. A $2.6M federal submission. $700K+ in awarded trade work. Nothing borrowed from a textbook or a training career. It comes from the field, tested under pressure, with real money on the line.</p>
-      </div>
-      <div class="pillar reveal">
-        <div class="pillar-num">02</div>
-        <div class="pillar-title">Small Groups — By Design</div>
-        <p class="pillar-desc">Every session caps at 10 participants. Not logistics — principle. That is the size where live bid review, direct feedback, and honest conversation are possible. The instructor knows your name and trade before the session starts.</p>
-      </div>
-      <div class="pillar reveal">
-        <div class="pillar-num">03</div>
-        <div class="pillar-title">Real Work — Yours</div>
-        <p class="pillar-desc">The final module of every session is a live hot seat review of actual participant bids. You bring a real bid. The room reviews it. You get direct critique on scope, pricing, and proposal quality — from someone who bids at that level every week.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TRANSFORMATION -->
-<div class="divider" style="padding:0 var(--pad);max-width:var(--max-w);margin:0 auto;">
-  <div class="line"></div><div class="lbl">What Changes After One Day</div><div class="line"></div>
-</div>
-<section class="transform">
-  <div class="transform-inner">
-    <div class="eyebrow">The Outcomes</div>
-    <h2 class="section-title">Not what you'll learn.<br><span class="a">What you'll do differently Monday morning.</span></h2>
-    <p style="color:var(--fog);font-size:0.9rem;line-height:1.7;margin-top:14px;max-width:640px;">If you've been wondering how to bid construction work with less guesswork and more margin, these are the habits that change that — starting with your next bid.</p>
-    <div class="t-grid">
-      <div class="t-item reveal"><div class="t-num">01</div><div class="t-title">Triage 2–3× Faster</div><div class="t-desc">20 minutes to a go/no-go decision. Deliberate, not default.</div></div>
-      <div class="t-item reveal"><div class="t-num">02</div><div class="t-title">Eliminate the Margin Leak</div><div class="t-desc">All five cost components present every time. No more missing burden rate or conflating markup with margin.</div></div>
-      <div class="t-item reveal"><div class="t-num">03</div><div class="t-title">Stop Scope Disputes Before They Start</div><div class="t-desc">Exclusions that hold up. Fewer places for change order fights to begin.</div></div>
-      <div class="t-item reveal"><div class="t-num">04</div><div class="t-title">Price With Confidence</div><div class="t-desc">Scope gap matrix as a habit. Sub quotes read before they enter your number.</div></div>
-      <div class="t-item reveal"><div class="t-num">05</div><div class="t-title">Understand How Competitors Think</div><div class="t-desc">Know what GCs look for when they open your proposal — and what makes them call someone else first.</div></div>
-      <div class="t-item reveal"><div class="t-num">06</div><div class="t-title">Build a System, Not Tribal Knowledge</div><div class="t-desc">Documented logic — checklists, scope language, templates — that your shop can run on.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- CURRICULUM -->
-<div class="divider" style="padding:0 var(--pad);max-width:var(--max-w);margin:0 auto;">
-  <div class="line"></div><div class="lbl">The Six Modules</div><div class="line"></div>
-</div>
-<section class="curriculum">
-  <div class="curriculum-inner">
-    <div class="eyebrow">What You'll Work Through</div>
-    <h2 class="section-title">Six hours.<span class="a"> No filler.</span></h2>
-    <p style="color:var(--fog);font-size:0.9rem;line-height:1.7;margin-top:14px;max-width:640px;">This construction estimating training covers every stage of a winning bid — from reading the documents to pricing the number to writing the proposal that gets you to the table.</p>
-    <div class="mod-grid">
-      <div class="mod reveal"><div class="mod-n">01</div><div class="mod-time">60 min · Morning</div><div class="mod-title">Reading the Job Before You Price It</div><p class="mod-desc">Document hierarchy, 20-minute bid triage, scope gap identification, go/no-go framework.</p></div>
-      <div class="mod reveal"><div class="mod-n">02</div><div class="mod-time">60 min · Morning</div><div class="mod-title">Building a Number That Wins and Pays</div><p class="mod-desc">Five-component build-up, burden rate, markup vs. margin math, live steel bid walkthrough.</p></div>
-      <div class="mod reveal"><div class="mod-n">03</div><div class="mod-time">60 min · Midday</div><div class="mod-title">Scope Inclusion / Exclusion That Protects You</div><p class="mod-desc">Three types of scope language, exclusion templates, live scope letter exercise.</p></div>
-      <div class="mod reveal"><div class="mod-n">04</div><div class="mod-time">60 min · Midday</div><div class="mod-title">Vendor Quotes and Subcontractor Risk</div><p class="mod-desc">14-point sub quote review, scope gap matrix, contingency decisions.</p></div>
-      <div class="mod reveal"><div class="mod-n">05</div><div class="mod-time">60 min · Afternoon</div><div class="mod-title">The Proposal That Gets You to the Table</div><p class="mod-desc">Nine-section proposal anatomy, what GCs read for, self-audit against professional standards.</p></div>
-      <div class="mod reveal"><div class="mod-n">06</div><div class="mod-time">60 min · Afternoon</div><div class="mod-title">Bring Your Own Bid — Hot Seat</div><p class="mod-desc">Live peer review of 2–3 real bids. Direct feedback. Three concrete changes for your next bid.</p></div>
-    </div>
-    <div style="text-align:center;margin-top:32px;">
-      <a href="workshop.html" class="btn btn-ghost">Full Workshop Details &amp; FAQ →</a>
-    </div>
-  </div>
-</section>
-
-<!-- INSTRUCTOR -->
-<div class="divider" style="padding:0 var(--pad);max-width:var(--max-w);margin:0 auto;">
-  <div class="line"></div><div class="lbl">Your Instructor</div><div class="line"></div>
-</div>
-<section class="instructor">
-  <div class="instructor-inner reveal">
-    <div class="av">AF</div>
-    <div>
-      <div class="av-name">Arron Fain</div>
-      <div class="av-role">Founder, GritForge Consultants · Estimator, Clark Iron Erectors</div>
-      <div class="av-creds">
-        <div class="av-cred"><div class="av-cred-n">$700K+</div><div class="av-cred-l">Awarded jobs in hand</div></div>
-        <div class="av-cred"><div class="av-cred-n">$2.6M</div><div class="av-cred-l">Federal bid in negotiations</div></div>
-        <div class="av-cred"><div class="av-cred-n">$1M+</div><div class="av-cred-l">Active trade negotiation</div></div>
-        <div class="av-cred"><div class="av-cred-n">15+</div><div class="av-cred-l">Years field + preconstruction</div></div>
-      </div>
-      <p class="av-bio">Arron bids work weekly across structural steel, wood framing, ground-up commercial, and federal markets in Colorado and Texas. The frameworks in The Build-Up were built on real projects — <strong>$4.3M+ of active pipeline. Not theory.</strong> He runs GritForge Consultants as a preconstruction intelligence firm while simultaneously estimating for Clark Iron Erectors.</p>
-      <div class="tags">
-        <span class="tag">Structural Steel</span>
-        <span class="tag">Wood Framing</span>
-        <span class="tag">Federal Bid Work</span>
-        <span class="tag">Ground-Up Commercial</span>
-        <span class="tag">Colorado &amp; Texas</span>
-      </div>
-      <a href="workshop.html#register" class="btn btn-primary">Reserve a Seat in His Next Session →</a>
-    </div>
-  </div>
-</section>
-
-<!-- GUARANTEE -->
-<section class="guarantee">
-  <div class="g-icon">⊕</div>
-  <div>
-    <div class="g-title">The Straight-Talk Guarantee</div>
-    <p class="g-text">If you complete the full workshop and cannot identify <strong>three concrete changes</strong> you will make to how you bid — a template, a process, a pricing decision — ask for your money back. No hoops. This only works if the content delivers, and that is the standard I hold to.</p>
-  </div>
-</section>
-
-<!-- REGISTER -->
-<section class="reg" id="register">
-  <h2 class="reg-title">Secure Your <span class="a">Seat</span></h2>
-  <p class="reg-sub">10 seats maximum. Session confirmed when cohort fills — typically within 7–10 days.</p>
-
-  <div class="reg-or-full">
-    <a href="workshop.html" class="btn btn-ghost" style="font-size:0.8rem;padding:11px 24px;">Read Full Workshop Details First</a>
-    <span class="or-divider">— or register below —</span>
-  </div>
-
-  <div class="form">
-    <div class="row">
-      <div class="field"><label>First Name</label><input type="text" placeholder="John"></div>
-      <div class="field"><label>Last Name</label><input type="text" placeholder="Smith"></div>
-    </div>
-    <div class="row">
-      <div class="field full"><label>Company Name</label><input type="text" placeholder="ABC Contractors LLC"></div>
-    </div>
-    <div class="row">
-      <div class="field full"><label>Email Address</label><input type="email" placeholder="you@yourcompany.com"></div>
-    </div>
-    <div class="row">
-      <div class="field full">
-        <label>Your Role</label>
-        <select>
-          <option value="" disabled selected>Select your role</option>
-          <option>General Contractor / Owner</option>
-          <option>Trade Sub / Owner</option>
-          <option>Estimator</option>
-          <option>Project Manager moving into estimating</option>
-          <option>Foreman / Field Sup moving into estimating</option>
-          <option>Other</option>
-        </select>
-      </div>
-    </div>
-    <button class="sub-btn" onclick="handleReg()">Reserve Seat &amp; Proceed to Payment →</button>
-    <p class="form-note">Payment via Stripe · Your seat is confirmed immediately after payment · Refund policy: see guarantee above</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-grid">
-    <div class="footer-brand-block">
-      <div class="brand-lockup" style="opacity:0.55;margin-bottom:14px;">
-        <div class="gf-hex"><span>GF</span></div>
-        <div class="gf-wordmark">
-          <span class="gw-name">GritForge</span>
-          <span class="gw-sub">Forged with Grit</span>
-        </div>
-      </div>
-      <div class="fb-presents">Presents</div>
-      <div class="fb-name">The Build-Up<br>Academy</div>
-      <p>Field-tested preconstruction training for GCs and trade subs who bid competitively.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Navigation</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="workshop.html">The Workshop</a></li>
-        <li><a href="waitlist.html">Join Waitlist</a></li>
-        <li><a href="workshop.html#register">Reserve a Seat</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:arron@gritforge.co">arron@gritforge.co</a></li>
-        <li><a href="tel:7202052859">720-205-2859</a></li>
-        <li><a href="https://thebuildupacademy.com" target="_blank" rel="noopener">thebuildupacademy.com</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 GritForge Consultants · All rights reserved.</span>
-    <span>thebuildupacademy.com · Denver, CO</span>
-  </div>
-</footer>
-
-<script>
-  // Seat meter
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      const mf = document.getElementById('mf');
-      if (mf) mf.style.width = '30%';
-    }, 600);
-  });
-
-  // Scroll reveal
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-  // Form submit
-  function handleReg() {
-    const fn = document.querySelector('input[placeholder="John"]').value.trim();
-    const em = document.querySelector('input[type="email"]').value.trim();
-    if (!fn || !em) { alert('Please fill in your name and email.'); return; }
-    // window.location.href = 'STRIPE_LINK_HERE';
-    alert('Wire in your Stripe Payment Link here.');
-  }
-</script>
+<script>document.documentElement.classList.add('js');</script>
+<script src="main.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Course",
-  "name": "The Build-Up Academy",
-  "description": "6-hour live preconstruction and bidding workshop for GCs and trade subcontractors.",
-  "provider": {
-    "@type": "Organization",
-    "name": "GritForge Consultants",
-    "url": "https://thebuildupacademy.com"
-  },
-  "url": "https://thebuildupacademy.com",
-  "courseMode": "online",
-  "price": "500",
-  "priceCurrency": "USD"
+  "@type": "EducationalOrganization",
+  "name": "Build-Up Academy",
+  "alternateName": "BUA",
+  "url": "https://thebuildupacademy.com/",
+  "description": "Construction-trades workforce training nonprofit. Fiscally sponsored by Denver Dream Center.",
+  "areaServed": ["Denver, CO", "Colorado Front Range", "Central Texas"],
+  "founder": { "@type": "Person", "name": "Arron Fain" },
+  "email": "arron@gritforge.co",
+  "telephone": "+1-720-205-2859"
 }
 </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="Build-Up Academy, back to top">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 7h24v6H23v14h9v6H8v-6h9V13H8z"/><circle cx="11" cy="10" r="1.3"/><circle cx="29" cy="10" r="1.3"/><circle cx="11" cy="30" r="1.3"/><circle cx="29" cy="30" r="1.3"/></svg>
+      <span class="brand-text"><span class="brand-name">Build-Up Academy</span><span class="brand-sub">Construction-Trades Training Nonprofit</span></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Menu</span><span class="bars" aria-hidden="true"></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#who">Who We Serve</a></li>
+        <li><a href="#employers">Employers</a></li>
+        <li><a href="#funders">Funders</a></li>
+        <li><a href="#founder">Founder</a></li>
+        <li><a class="btn btn-hivis btn-sm" href="#contact">Get Involved</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ═══ HERO ═════════════════════════════════════════════ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-layer layer-grid" data-depth="0.15" aria-hidden="true"></div>
+  <div class="hero-layer layer-beam" data-depth="0.6" aria-hidden="true">
+    <svg viewBox="0 0 200 240"><path d="M10 10h180v28H114v164h76v28H10v-28h76V38H10z"/></svg>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="kicker rise" style="--d:0"><span class="dot" aria-hidden="true"></span>Nonprofit · Workforce training for the construction trades</p>
+      <h1 id="hero-title" class="hero-title rise" style="--d:1">
+        <span class="line">Real pathways</span>
+        <span class="line">into the <em>trades.</em></span>
+      </h1>
+      <p class="lead rise" style="--d:2">Build-Up Academy trains people who are ready to build a new life for careers in construction — starting with steel and structural work in Denver and the Colorado Front Range.</p>
+      <div class="hero-actions rise" style="--d:3">
+        <a class="btn btn-hivis" href="#contact">Get involved <span aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="#program">Explore the curriculum</a>
+      </div>
+    </div>
+    <div class="hero-visual" data-depth="0.35">
+      <div class="frame-wrap tilt-scene">
+        <svg class="frame-svg" viewBox="0 -40 680 600" role="img" aria-labelledby="frameTitle" preserveAspectRatio="xMidYMid meet"><title id="frameTitle">Line drawing of a structural steel frame going up, with a beam being lifted into place</title><path class="draw s col" style="--i:0" pathLength="1" d="M82.0 80h16v440h-16Z"/><path class="draw s web" style="--i:0" pathLength="1" d="M90 86L90 514"/><path class="draw s col" style="--i:1" pathLength="1" d="M242.0 80h16v440h-16Z"/><path class="draw s web" style="--i:1" pathLength="1" d="M250 86L250 514"/><path class="draw s col" style="--i:2" pathLength="1" d="M402.0 80h16v440h-16Z"/><path class="draw s web" style="--i:2" pathLength="1" d="M410 86L410 514"/><path class="draw s col" style="--i:3" pathLength="1" d="M562.0 140h16v380h-16Z"/><path class="draw s web" style="--i:3" pathLength="1" d="M570 146L570 514"/><path class="draw s beam" style="--i:4" pathLength="1" d="M98.0 380h144v14h-144Z"/><path class="draw s web" style="--i:4" pathLength="1" d="M102.0 387.0L238.0 387.0"/><path class="draw s beam" style="--i:4.5" pathLength="1" d="M258.0 380h144v14h-144Z"/><path class="draw s web" style="--i:4.5" pathLength="1" d="M262.0 387.0L398.0 387.0"/><path class="draw s beam" style="--i:5.0" pathLength="1" d="M418.0 380h144v14h-144Z"/><path class="draw s web" style="--i:5.0" pathLength="1" d="M422.0 387.0L558.0 387.0"/><path class="draw s beam" style="--i:5.5" pathLength="1" d="M98.0 260h144v14h-144Z"/><path class="draw s web" style="--i:5.5" pathLength="1" d="M102.0 267.0L238.0 267.0"/><path class="draw s beam" style="--i:6.0" pathLength="1" d="M258.0 260h144v14h-144Z"/><path class="draw s web" style="--i:6.0" pathLength="1" d="M262.0 267.0L398.0 267.0"/><path class="draw s beam" style="--i:6.5" pathLength="1" d="M418.0 260h144v14h-144Z"/><path class="draw s web" style="--i:6.5" pathLength="1" d="M422.0 267.0L558.0 267.0"/><path class="draw s beam" style="--i:7.0" pathLength="1" d="M98.0 140h144v14h-144Z"/><path class="draw s web" style="--i:7.0" pathLength="1" d="M102.0 147.0L238.0 147.0"/><path class="draw s beam" style="--i:7.5" pathLength="1" d="M258.0 140h144v14h-144Z"/><path class="draw s web" style="--i:7.5" pathLength="1" d="M262.0 147.0L398.0 147.0"/><path class="draw s beam" style="--i:8.0" pathLength="1" d="M418.0 140h144v14h-144Z"/><path class="draw s web" style="--i:8.0" pathLength="1" d="M422.0 147.0L558.0 147.0"/><path class="draw s beam" style="--i:8.5" pathLength="1" d="M98.0 80h144v14h-144Z"/><path class="draw s beam" style="--i:9.0" pathLength="1" d="M258.0 80h144v14h-144Z"/><path class="draw s brace" style="--i:9.5" pathLength="1" d="M258 274L402 380"/><path class="draw s brace" style="--i:9.5" pathLength="1" d="M402 274L258 380"/><path class="draw s brace" style="--i:10.5" pathLength="1" d="M98 154L242 260"/><path class="draw s brace" style="--i:10.5" pathLength="1" d="M242 154L98 260"/><path class="draw g" style="--i:11.5" pathLength="1" d="M98.0 394l18 0l-18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M98.0 274l18 0l-18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M98.0 154l18 0l-18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M98.0 94l18 0l-18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M242.0 394l-18 0l18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M258.0 394l18 0l-18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M242.0 274l-18 0l18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M258.0 274l18 0l-18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M242.0 154l-18 0l18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M258.0 154l18 0l-18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M242.0 94l-18 0l18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M258.0 94l18 0l-18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M402.0 394l-18 0l18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M418.0 394l18 0l-18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M402.0 274l-18 0l18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M418.0 274l18 0l-18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M402.0 154l-18 0l18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M418.0 154l18 0l-18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M402.0 94l-18 0l18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M562.0 394l-18 0l18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M562.0 274l-18 0l18 18Z"/><path class="draw g" style="--i:11.5" pathLength="1" d="M562.0 154l-18 0l18 18Z"/><path class="draw s ground" style="--i:0" pathLength="1" d="M20 520H620"/><g class="rivets"><circle class="rivet" cx="103.0" cy="383" r="1.6"/><circle class="rivet" cx="103.0" cy="387" r="1.6"/><circle class="rivet" cx="103.0" cy="391" r="1.6"/><circle class="rivet" cx="103.0" cy="263" r="1.6"/><circle class="rivet" cx="103.0" cy="267" r="1.6"/><circle class="rivet" cx="103.0" cy="271" r="1.6"/><circle class="rivet" cx="103.0" cy="143" r="1.6"/><circle class="rivet" cx="103.0" cy="147" r="1.6"/><circle class="rivet" cx="103.0" cy="151" r="1.6"/><circle class="rivet" cx="103.0" cy="83" r="1.6"/><circle class="rivet" cx="103.0" cy="87" r="1.6"/><circle class="rivet" cx="103.0" cy="91" r="1.6"/><circle class="rivet" cx="237.0" cy="383" r="1.6"/><circle class="rivet" cx="237.0" cy="387" r="1.6"/><circle class="rivet" cx="237.0" cy="391" r="1.6"/><circle class="rivet" cx="263.0" cy="383" r="1.6"/><circle class="rivet" cx="263.0" cy="387" r="1.6"/><circle class="rivet" cx="263.0" cy="391" r="1.6"/><circle class="rivet" cx="237.0" cy="263" r="1.6"/><circle class="rivet" cx="237.0" cy="267" r="1.6"/><circle class="rivet" cx="237.0" cy="271" r="1.6"/><circle class="rivet" cx="263.0" cy="263" r="1.6"/><circle class="rivet" cx="263.0" cy="267" r="1.6"/><circle class="rivet" cx="263.0" cy="271" r="1.6"/><circle class="rivet" cx="237.0" cy="143" r="1.6"/><circle class="rivet" cx="237.0" cy="147" r="1.6"/><circle class="rivet" cx="237.0" cy="151" r="1.6"/><circle class="rivet" cx="263.0" cy="143" r="1.6"/><circle class="rivet" cx="263.0" cy="147" r="1.6"/><circle class="rivet" cx="263.0" cy="151" r="1.6"/><circle class="rivet" cx="237.0" cy="83" r="1.6"/><circle class="rivet" cx="237.0" cy="87" r="1.6"/><circle class="rivet" cx="237.0" cy="91" r="1.6"/><circle class="rivet" cx="263.0" cy="83" r="1.6"/><circle class="rivet" cx="263.0" cy="87" r="1.6"/><circle class="rivet" cx="263.0" cy="91" r="1.6"/><circle class="rivet" cx="397.0" cy="383" r="1.6"/><circle class="rivet" cx="397.0" cy="387" r="1.6"/><circle class="rivet" cx="397.0" cy="391" r="1.6"/><circle class="rivet" cx="423.0" cy="383" r="1.6"/><circle class="rivet" cx="423.0" cy="387" r="1.6"/><circle class="rivet" cx="423.0" cy="391" r="1.6"/><circle class="rivet" cx="397.0" cy="263" r="1.6"/><circle class="rivet" cx="397.0" cy="267" r="1.6"/><circle class="rivet" cx="397.0" cy="271" r="1.6"/><circle class="rivet" cx="423.0" cy="263" r="1.6"/><circle class="rivet" cx="423.0" cy="267" r="1.6"/><circle class="rivet" cx="423.0" cy="271" r="1.6"/><circle class="rivet" cx="397.0" cy="143" r="1.6"/><circle class="rivet" cx="397.0" cy="147" r="1.6"/><circle class="rivet" cx="397.0" cy="151" r="1.6"/><circle class="rivet" cx="423.0" cy="143" r="1.6"/><circle class="rivet" cx="423.0" cy="147" r="1.6"/><circle class="rivet" cx="423.0" cy="151" r="1.6"/><circle class="rivet" cx="397.0" cy="83" r="1.6"/><circle class="rivet" cx="397.0" cy="87" r="1.6"/><circle class="rivet" cx="397.0" cy="91" r="1.6"/><circle class="rivet" cx="557.0" cy="383" r="1.6"/><circle class="rivet" cx="557.0" cy="387" r="1.6"/><circle class="rivet" cx="557.0" cy="391" r="1.6"/><circle class="rivet" cx="557.0" cy="263" r="1.6"/><circle class="rivet" cx="557.0" cy="267" r="1.6"/><circle class="rivet" cx="557.0" cy="271" r="1.6"/><circle class="rivet" cx="557.0" cy="143" r="1.6"/><circle class="rivet" cx="557.0" cy="147" r="1.6"/><circle class="rivet" cx="557.0" cy="151" r="1.6"/></g><g class="grid-anno"><line class="gridline" x1="90" y1="524" x2="90" y2="542"/><circle class="bubble" cx="90" cy="552" r="10"/><text class="bubble-t" x="90" y="556">A</text><line class="gridline" x1="250" y1="524" x2="250" y2="542"/><circle class="bubble" cx="250" cy="552" r="10"/><text class="bubble-t" x="250" y="556">B</text><line class="gridline" x1="410" y1="524" x2="410" y2="542"/><circle class="bubble" cx="410" cy="552" r="10"/><text class="bubble-t" x="410" y="556">C</text><line class="gridline" x1="570" y1="524" x2="570" y2="542"/><circle class="bubble" cx="570" cy="552" r="10"/><text class="bubble-t" x="570" y="556">D</text><text class="ann" x="590" y="144">T.O.S. L3</text><text class="ann" x="590" y="264">T.O.S. L2</text><text class="ann" x="590" y="384">T.O.S. L1</text></g><g class="lift"><line class="cable" x1="490" y1="-40" x2="490" y2="36"/><path class="hook" d="M490 36v8a6 6 0 1 1-6 6"/><line class="cable" x1="490" y1="44" x2="440" y2="60"/><line class="cable" x1="490" y1="44" x2="540" y2="60"/><g class="lift-beam"><rect x="418" y="60" width="144" height="14"/><line x1="422" y1="67" x2="558" y2="67"/></g></g></svg>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <dl class="spec-strip rise" style="--d:4">
+      <div><dt>Curriculum</dt><dd>9 proprietary workbooks</dd></div>
+      <div><dt>First trade track</dt><dd>Steel &amp; structural</dd></div>
+      <div><dt>Primary market</dt><dd>Denver &amp; Front Range</dd></div>
+      <div><dt>Fiscal sponsor</dt><dd>Denver Dream Center</dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="beam-divider" aria-hidden="true"><div class="beam-track" data-slide="0.25"></div></div>
+
+<!-- ═══ MISSION ══════════════════════════════════════════ -->
+<section class="section" id="mission" aria-labelledby="mission-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="tag-no">01</span> Mission</p>
+      <h2 id="mission-title" class="section-title">A trade is a foundation. <span class="hl">We help people pour it.</span></h2>
+      <p class="section-lead">Build-Up Academy is a construction-trades workforce training nonprofit. We open real pathways into the trades for people who are ready to build a new life — including second-chance candidates — and we train them on a curriculum built by someone who has spent two decades on jobsites and in the estimating office.</p>
+    </div>
+    <div class="card-grid three">
+      <article class="card tilt reveal" style="--d:0">
+        <span class="rivets" aria-hidden="true"></span>
+        <p class="card-no">A</p>
+        <h3>Structured, not scattered</h3>
+        <p>A proprietary nine-workbook curriculum gives every trainee a clear sequence to follow, from fundamentals forward.</p>
+      </article>
+      <article class="card tilt reveal" style="--d:1">
+        <span class="rivets" aria-hidden="true"></span>
+        <p class="card-no">B</p>
+        <h3>Steel first, more trades next</h3>
+        <p>We start with steel and structural work, then expand the program to other construction trades.</p>
+      </article>
+      <article class="card tilt reveal" style="--d:2">
+        <span class="rivets" aria-hidden="true"></span>
+        <p class="card-no">C</p>
+        <h3>Doors open to second chances</h3>
+        <p>Where someone starts doesn’t decide where they finish. We welcome people who are ready to put in the work.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROGRAM / CURRICULUM EXPLORER ════════════════════ -->
+<section class="section section-blueprint" id="program" aria-labelledby="program-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="tag-no">02</span> How the program works</p>
+      <h2 id="program-title" class="section-title">Nine workbooks. <span class="hl">Built floor by floor.</span></h2>
+      <p class="section-lead">Trainees work through the curriculum the way a steel frame goes up: one level at a time, each one resting on the last. Select a floor to explore a workbook.</p>
+    </div>
+
+    <!-- TODO(Arron): confirm the program flow below (format, length, schedule, and how trainees connect to employers). -->
+    <ol class="steps reveal">
+      <li><span class="step-no">Learn</span><p>Work through the nine-workbook curriculum in sequence.</p></li>
+      <li><span class="step-no">Build</span><p>Develop trade skills, starting with steel and structural.</p></li>
+      <li><span class="step-no">Connect</span><p>Meet contractors looking for people ready to work.</p></li>
+    </ol>
+
+    <div class="explorer reveal" data-explorer>
+      <div class="tower" role="tablist" aria-label="Curriculum workbooks" aria-orientation="vertical">
+        <div class="tower-base" aria-hidden="true"><span>Foundation</span></div>
+        <button class="floor" role="tab" id="wb-tab-1" aria-controls="wb-panel-1" aria-selected="true" tabindex="0" style="--f:1"><span class="floor-no">WB 01</span><span class="floor-beam" aria-hidden="true"></span><span class="floor-lv">L1</span></button>
+        <button class="floor" role="tab" id="wb-tab-2" aria-controls="wb-panel-2" aria-selected="false" tabindex="-1" style="--f:2"><span class="floor-no">WB 02</span><span class="floor-beam" aria-hidden="true"></span><span class="floor-lv">L2</span></button>
+        <button class="floor" role="tab" id="wb-tab-3" aria-controls="wb-panel-3" aria-selected="false" tabindex="-1" style="--f:3"><span class="floor-no">WB 03</span><span class="floor-beam" aria-hidden="true"></span><span class="floor-lv">L3</span></button>
+        <button class="floor" role="tab" id="wb-tab-4" aria-controls="wb-panel-4" aria-selected="false" tabindex="-1" style="--f:4"><span class="floor-no">WB 04</span><span class="floor-beam" aria-hidden="true"></span><span class="floor-lv">L4</span></button>
+        <button class="floor" role="tab" id="wb-tab-5" aria-controls="wb-panel-5" aria-selected="false" tabindex="-1" style="--f:5"><span class="floor-no">WB 05</span><span class="floor-beam" aria-hidden="true"></span><span class="floor-lv">L5</span></button>
+        <button class="floor" role="tab" id="wb-tab-6" aria-controls="wb-panel-6" aria-selected="false" tabindex="-1" style="--f:6"><span class="floor-no">WB 06</span><span class="floor-beam" aria-hidden="true"></span><span class="floor-lv">L6</span></button>
+        <button class="floor" role="tab" id="wb-tab-7" aria-controls="wb-panel-7" aria-selected="false" tabindex="-1" style="--f:7"><span class="floor-no">WB 07</span><span class="floor-beam" aria-hidden="true"></span><span class="floor-lv">L7</span></button>
+        <button class="floor" role="tab" id="wb-tab-8" aria-controls="wb-panel-8" aria-selected="false" tabindex="-1" style="--f:8"><span class="floor-no">WB 08</span><span class="floor-beam" aria-hidden="true"></span><span class="floor-lv">L8</span></button>
+        <button class="floor" role="tab" id="wb-tab-9" aria-controls="wb-panel-9" aria-selected="false" tabindex="-1" style="--f:9"><span class="floor-no">WB 09</span><span class="floor-beam" aria-hidden="true"></span><span class="floor-lv">L9</span></button>
+      </div>
+      <div class="explorer-panels">
+        <div class="wb-panel" role="tabpanel" id="wb-panel-1" aria-labelledby="wb-tab-1" tabindex="0">
+          <p class="wb-kicker">Workbook 01 <span>of 09</span></p>
+          <!-- TODO(Arron): real title and summary for Workbook 1. -->
+          <h3 class="wb-title">Workbook 1 title <span class="todo-chip">to be announced</span></h3>
+          <p>Summary coming soon. Each workbook builds on the one below it, so trainees always know what’s next.</p>
+          <div class="wb-meter" aria-hidden="true"><span style="width:11.1%"></span></div>
+          <p class="wb-meta">Level 1 of 9 · Steel &amp; structural track first</p>
+        </div>
+        <div class="wb-panel" role="tabpanel" id="wb-panel-2" aria-labelledby="wb-tab-2" tabindex="0">
+          <p class="wb-kicker">Workbook 02 <span>of 09</span></p>
+          <!-- TODO(Arron): real title and summary for Workbook 2. -->
+          <h3 class="wb-title">Workbook 2 title <span class="todo-chip">to be announced</span></h3>
+          <p>Summary coming soon. Each workbook builds on the one below it, so trainees always know what’s next.</p>
+          <div class="wb-meter" aria-hidden="true"><span style="width:22.2%"></span></div>
+          <p class="wb-meta">Level 2 of 9 · Steel &amp; structural track first</p>
+        </div>
+        <div class="wb-panel" role="tabpanel" id="wb-panel-3" aria-labelledby="wb-tab-3" tabindex="0">
+          <p class="wb-kicker">Workbook 03 <span>of 09</span></p>
+          <!-- TODO(Arron): real title and summary for Workbook 3. -->
+          <h3 class="wb-title">Workbook 3 title <span class="todo-chip">to be announced</span></h3>
+          <p>Summary coming soon. Each workbook builds on the one below it, so trainees always know what’s next.</p>
+          <div class="wb-meter" aria-hidden="true"><span style="width:33.3%"></span></div>
+          <p class="wb-meta">Level 3 of 9 · Steel &amp; structural track first</p>
+        </div>
+        <div class="wb-panel" role="tabpanel" id="wb-panel-4" aria-labelledby="wb-tab-4" tabindex="0">
+          <p class="wb-kicker">Workbook 04 <span>of 09</span></p>
+          <!-- TODO(Arron): real title and summary for Workbook 4. -->
+          <h3 class="wb-title">Workbook 4 title <span class="todo-chip">to be announced</span></h3>
+          <p>Summary coming soon. Each workbook builds on the one below it, so trainees always know what’s next.</p>
+          <div class="wb-meter" aria-hidden="true"><span style="width:44.4%"></span></div>
+          <p class="wb-meta">Level 4 of 9 · Steel &amp; structural track first</p>
+        </div>
+        <div class="wb-panel" role="tabpanel" id="wb-panel-5" aria-labelledby="wb-tab-5" tabindex="0">
+          <p class="wb-kicker">Workbook 05 <span>of 09</span></p>
+          <!-- TODO(Arron): real title and summary for Workbook 5. -->
+          <h3 class="wb-title">Workbook 5 title <span class="todo-chip">to be announced</span></h3>
+          <p>Summary coming soon. Each workbook builds on the one below it, so trainees always know what’s next.</p>
+          <div class="wb-meter" aria-hidden="true"><span style="width:55.6%"></span></div>
+          <p class="wb-meta">Level 5 of 9 · Steel &amp; structural track first</p>
+        </div>
+        <div class="wb-panel" role="tabpanel" id="wb-panel-6" aria-labelledby="wb-tab-6" tabindex="0">
+          <p class="wb-kicker">Workbook 06 <span>of 09</span></p>
+          <!-- TODO(Arron): real title and summary for Workbook 6. -->
+          <h3 class="wb-title">Workbook 6 title <span class="todo-chip">to be announced</span></h3>
+          <p>Summary coming soon. Each workbook builds on the one below it, so trainees always know what’s next.</p>
+          <div class="wb-meter" aria-hidden="true"><span style="width:66.7%"></span></div>
+          <p class="wb-meta">Level 6 of 9 · Steel &amp; structural track first</p>
+        </div>
+        <div class="wb-panel" role="tabpanel" id="wb-panel-7" aria-labelledby="wb-tab-7" tabindex="0">
+          <p class="wb-kicker">Workbook 07 <span>of 09</span></p>
+          <!-- TODO(Arron): real title and summary for Workbook 7. -->
+          <h3 class="wb-title">Workbook 7 title <span class="todo-chip">to be announced</span></h3>
+          <p>Summary coming soon. Each workbook builds on the one below it, so trainees always know what’s next.</p>
+          <div class="wb-meter" aria-hidden="true"><span style="width:77.8%"></span></div>
+          <p class="wb-meta">Level 7 of 9 · Steel &amp; structural track first</p>
+        </div>
+        <div class="wb-panel" role="tabpanel" id="wb-panel-8" aria-labelledby="wb-tab-8" tabindex="0">
+          <p class="wb-kicker">Workbook 08 <span>of 09</span></p>
+          <!-- TODO(Arron): real title and summary for Workbook 8. -->
+          <h3 class="wb-title">Workbook 8 title <span class="todo-chip">to be announced</span></h3>
+          <p>Summary coming soon. Each workbook builds on the one below it, so trainees always know what’s next.</p>
+          <div class="wb-meter" aria-hidden="true"><span style="width:88.9%"></span></div>
+          <p class="wb-meta">Level 8 of 9 · Steel &amp; structural track first</p>
+        </div>
+        <div class="wb-panel" role="tabpanel" id="wb-panel-9" aria-labelledby="wb-tab-9" tabindex="0">
+          <p class="wb-kicker">Workbook 09 <span>of 09</span></p>
+          <!-- TODO(Arron): real title and summary for Workbook 9. -->
+          <h3 class="wb-title">Workbook 9 title <span class="todo-chip">to be announced</span></h3>
+          <p>Summary coming soon. Each workbook builds on the one below it, so trainees always know what’s next.</p>
+          <div class="wb-meter" aria-hidden="true"><span style="width:100.0%"></span></div>
+          <p class="wb-meta">Level 9 of 9 · Steel &amp; structural track first</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="roadmap reveal">
+      <div class="road-item is-now"><span class="road-tag">Phase 1 · Now</span><strong>Steel &amp; structural</strong></div>
+      <div class="road-arrow" aria-hidden="true"></div>
+      <!-- TODO(Arron): name the next trades once decided. -->
+      <div class="road-item"><span class="road-tag">Next</span><strong>More construction trades</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHO WE SERVE ═════════════════════════════════════ -->
+<section class="section" id="who" aria-labelledby="who-title">
+  <div class="wrap split">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="tag-no">03</span> Who we serve</p>
+      <h2 id="who-title" class="section-title">People ready to <span class="hl">build something new.</span></h2>
+      <p class="section-lead">Build-Up Academy is for people who want a real career in the construction trades and are ready to earn it. That includes people starting over and second-chance candidates. What matters is where you’re headed.</p>
+      <ul class="check-list">
+        <li><span class="check" aria-hidden="true"></span><div><b>Ready to work</b><span>Committed to showing up and learning a trade.</span></div></li>
+        <li><span class="check" aria-hidden="true"></span><div><b>Starting fresh</b><span>Looking for a real career path, not just another job.</span></div></li>
+        <li><span class="check" aria-hidden="true"></span><div><b>Second chances welcome</b><span>A past doesn’t close the door here.</span></div></li>
+      </ul>
+      <!-- TODO(Arron): add eligibility requirements (age, location, schedule, etc.) once finalized. -->
+    </div>
+    <div class="regions reveal" style="--d:1">
+      <article class="region card tilt">
+        <span class="rivets" aria-hidden="true"></span>
+        <p class="region-tag">Primary market</p>
+        <h3>Denver &amp; the Colorado Front Range</h3>
+        <p>Where the program starts.</p>
+        <svg class="region-map" viewBox="0 0 220 90" aria-hidden="true"><path class="ridge" d="M0 80 L30 40 L48 58 L70 22 L92 52 L112 30 L134 60 L150 44 L170 70 L220 70"/><circle class="pin" cx="150" cy="62" r="5"/><circle class="pin-ring" cx="150" cy="62" r="5"/></svg>
+      </article>
+      <article class="region card tilt">
+        <span class="rivets" aria-hidden="true"></span>
+        <p class="region-tag">Secondary market</p>
+        <h3>Central Texas</h3>
+        <p>Next on the map.</p>
+        <svg class="region-map" viewBox="0 0 220 90" aria-hidden="true"><path class="ridge" d="M0 70 Q60 62 110 66 T220 60"/><circle class="pin" cx="112" cy="64" r="5"/><circle class="pin-ring" cx="112" cy="64" r="5"/></svg>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="beam-divider" aria-hidden="true"><div class="beam-track" data-slide="-0.25"></div></div>
+
+<!-- ═══ EMPLOYERS ════════════════════════════════════════ -->
+<section class="section" id="employers" aria-labelledby="employers-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="tag-no">04</span> For employers &amp; contractors</p>
+      <h2 id="employers-title" class="section-title">A hiring pipeline <span class="hl">built by someone who bids the work.</span></h2>
+      <p class="section-lead">Contractors need people who arrive ready to learn and ready to work. Build-Up Academy trains candidates on a curriculum written from both the field and the estimating desk, so they understand how the work gets built and why it matters to the job.</p>
+    </div>
+    <div class="card-grid three">
+      <article class="card tilt reveal" style="--d:0"><span class="rivets" aria-hidden="true"></span><h3>Hire from the pipeline</h3><p>Tell us what roles you’re filling. We’ll connect you with trainees as they come through the program.</p></article>
+      <article class="card tilt reveal" style="--d:1"><span class="rivets" aria-hidden="true"></span><h3>Shape the training</h3><p>Help the curriculum reflect what your crews actually need on day one.</p></article>
+      <article class="card tilt reveal" style="--d:2"><span class="rivets" aria-hidden="true"></span><h3>Open your jobsite</h3><p>Partner on site visits, mentoring, or entry-level opportunities.</p></article>
+    </div>
+    <div class="cta-row reveal"><a class="btn btn-hivis" href="#contact" data-interest="Employer / contractor">Talk to us about hiring <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<!-- ═══ FUNDERS ══════════════════════════════════════════ -->
+<section class="section section-panel" id="funders" aria-labelledby="funders-title">
+  <div class="wrap split">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="tag-no">05</span> For funders &amp; partners</p>
+      <h2 id="funders-title" class="section-title">Invest in the <span class="hl">people who build.</span></h2>
+      <p class="section-lead">Build-Up Academy is raising grant funding to launch and grow the program. We’re looking for foundations, public workforce partners, and community organizations who want to put real trade careers within reach.</p>
+      <div class="hero-actions">
+        <!-- TODO(Arron): replace href with the Denver Dream Center donation URL for Build-Up Academy. -->
+        <a class="btn btn-hivis" href="#contact" data-interest="Funder / grant partner" data-todo="donation-link">Give through Denver Dream Center</a>
+        <a class="btn btn-ghost" href="#contact" data-interest="Funder / grant partner">Start a grant conversation</a>
+      </div>
+    </div>
+    <aside class="spec-card reveal" style="--d:1" aria-label="Organization details">
+      <div class="spec-card-head"><span>Organization sheet</span><span class="badge">S-001</span></div>
+      <dl>
+        <div><dt>Status</dt><dd>Operating through fiscal sponsorship with Denver Dream Center</dd></div>
+        <div><dt>501(c)(3)</dt><dd>Pursuing independent status</dd></div>
+        <div><dt>Donations</dt><dd>Made through Denver Dream Center, our fiscal sponsor</dd></div>
+        <div><dt>Funding</dt><dd>Actively seeking grant partners</dd></div>
+        <div><dt>Markets</dt><dd>Denver / Colorado Front Range; Central Texas</dd></div>
+      </dl>
+      <!-- TODO(Arron): confirm donation/tax-receipt language with Denver Dream Center before adding any deductibility statement. -->
+    </aside>
+  </div>
+</section>
+
+<!-- ═══ FOUNDER ══════════════════════════════════════════ -->
+<section class="section" id="founder" aria-labelledby="founder-title">
+  <div class="wrap founder">
+    <div class="founder-plate reveal tilt" tabindex="0" aria-label="Founder card. Hover or focus to reveal the blueprint overlay.">
+      <!-- TODO(Arron): add a founder photo (e.g. founder.jpg) here in place of the monogram. -->
+      <div class="plate-face"><span class="mono-initials">AF</span><span class="plate-cap">Founder</span></div>
+      <svg class="plate-overlay" viewBox="0 0 300 360" aria-hidden="true"><g><path d="M30 60h240M30 120h240M30 180h240M30 240h240M30 300h240M60 30v300M150 30v300M240 30v300"/><path class="ov-hv" d="M40 320L150 60L260 320"/><circle cx="150" cy="60" r="6"/><text x="150" y="345">GRID LINES · A–C</text></g></svg>
+    </div>
+    <div class="founder-copy reveal" style="--d:1">
+      <p class="eyebrow"><span class="tag-no">06</span> Founder</p>
+      <h2 id="founder-title" class="section-title">Arron Fain</h2>
+      <p class="founder-role">Founder · 20-year carpenter turned construction estimator</p>
+      <p>Arron spent two decades as a carpenter before moving into construction estimating. He knows what the work asks of a person in the field, and what it takes to win it on paper.</p>
+      <div class="proof-grid">
+        <div class="proof card tilt"><span class="rivets" aria-hidden="true"></span><span class="proof-n" data-count="3" data-prefix="$" data-suffix="M+">$3M+</span><p>Revenue growth for a structural steel erector in under a year, from a system he built to bid commercial work in a trade he had never worked in.</p></div>
+        <div class="proof card tilt"><span class="rivets" aria-hidden="true"></span><span class="proof-n" data-count="2.6" data-prefix="$" data-suffix="M">$2.6M</span><p>Revenue growth for a second company from the first contract he secured for them.</p></div>
+      </div>
+      <p class="founder-note">Build-Up Academy turns that same systems thinking toward people: a clear, structured path into the trades.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT / GET INVOLVED ═══════════════════════════ -->
+<section class="section section-blueprint" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <p class="eyebrow"><span class="tag-no">07</span> Get involved</p>
+      <h2 id="contact-title" class="section-title">Pick up a tool. <span class="hl">Help us build.</span></h2>
+      <p class="section-lead">Whether you want to train, hire, fund, or partner, start here.</p>
+    </div>
+    <div class="contact-grid">
+      <!-- TODO(Arron): confirm the destination inbox. FormSubmit (same service used on the GritForge site) sends submissions to arron@gritforge.co; the first submission may trigger a one-time activation email. -->
+      <form class="contact-form card reveal" action="https://formsubmit.co/arron@gritforge.co" method="POST">
+        <span class="rivets" aria-hidden="true"></span>
+        <input type="hidden" name="_subject" value="Build-Up Academy website inquiry">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="field-row">
+          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="field">
+          <label for="f-interest">I’m interested in</label>
+          <select id="f-interest" name="interest" required>
+            <option value="" disabled selected>Choose one</option>
+            <option>Training with Build-Up Academy</option>
+            <option>Employer / contractor</option>
+            <option>Funder / grant partner</option>
+            <option>Community partner</option>
+            <option>Volunteering</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" rows="4"></textarea></div>
+        <button class="btn btn-hivis btn-block" type="submit">Send message <span aria-hidden="true">→</span></button>
+      </form>
+      <aside class="contact-side reveal" style="--d:1">
+        <ul class="paths">
+          <li><button type="button" class="path tilt" data-interest="Training with Build-Up Academy"><span class="path-k">Train</span><span>Start a career in the trades</span></button></li>
+          <li><button type="button" class="path tilt" data-interest="Employer / contractor"><span class="path-k">Hire</span><span>Build your crew from the pipeline</span></button></li>
+          <li><button type="button" class="path tilt" data-interest="Funder / grant partner"><span class="path-k">Fund</span><span>Support the program with a grant</span></button></li>
+        </ul>
+        <div class="direct">
+          <p class="direct-k">Direct</p>
+          <p><a href="mailto:arron@gritforge.co">arron@gritforge.co</a></p>
+          <p><a href="tel:+17202052859">720-205-2859</a></p>
+          <p>Denver, Colorado</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="brand-name">Build-Up Academy</p>
+      <p class="footer-small">A construction-trades workforce training nonprofit, fiscally sponsored by Denver Dream Center.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#employers">Employers</a></li>
+        <li><a href="#funders">Funders</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="wrap footer-bottom"><span>© 2026 Build-Up Academy</span><span>thebuildupacademy.com · Denver, CO</span></div>
+</footer>
 </body>
 </html>
