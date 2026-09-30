@@ -33,6 +33,7 @@
   /* ── Layered parallax (hero layers + beam dividers) ─── */
   var depthEls = [].slice.call(document.querySelectorAll('[data-depth]'));
   var slideEls = [].slice.call(document.querySelectorAll('[data-slide]'));
+  var parEls = [].slice.call(document.querySelectorAll('[data-parallax]'));
   var ticking = false;
   function onScroll() {
     if (ticking) return;
@@ -44,6 +45,12 @@
           el.style.transform = 'translate3d(0,' + (y * parseFloat(el.dataset.depth)).toFixed(1) + 'px,0)';
         });
       }
+      parEls.forEach(function (el) {
+        var r = el.parentNode.getBoundingClientRect();
+        if (r.bottom < -50 || r.top > vh + 50) return;
+        var c = (r.top + r.height / 2) - vh / 2;
+        el.style.transform = 'translate3d(0,' + (c * -parseFloat(el.dataset.parallax)).toFixed(1) + 'px,0)';
+      });
       slideEls.forEach(function (el) {
         var r = el.parentNode.getBoundingClientRect();
         if (r.bottom < -50 || r.top > vh + 50) return;
@@ -73,6 +80,15 @@
       });
       hero.addEventListener('pointerleave', function () { scene.style.transform = ''; });
       scene.style.transition = 'transform .5s cubic-bezier(.2,.7,.2,1)';
+    }
+    var stage = document.querySelector('.book-stage'), stack = document.querySelector('.book-stack');
+    if (stage && stack) {
+      stage.addEventListener('pointermove', function (e) {
+        var r = stage.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+        stack.style.transform = 'perspective(1400px) rotateY(' + (x * 12).toFixed(2) + 'deg) rotateX(' + (-y * 8).toFixed(2) + 'deg)';
+      });
+      stage.addEventListener('pointerleave', function () { stack.style.transform = ''; });
     }
     document.querySelectorAll('.tilt').forEach(function (card) {
       card.addEventListener('pointermove', function (e) {
